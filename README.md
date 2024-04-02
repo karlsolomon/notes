@@ -21,22 +21,6 @@ Work
 ```
 
 # Tags
-<personnel>
-: container for people involved in meeting
-<attendee>
-: person who was involved in the conversation
-<host>
-: person who led the discussion
-<takeaway>
-: lesson learned (conclusion) from the meeting
-<ai>
-: action item container
-<aiDescription>
-: defines action item acceptance criteria
-<aiOwner>
-: person resonsible for the action item (this is sub-element of <ai>
-<aiDeadline>
-: date action item is due by
-
+see tags.csv
 
 

@@ -8,4 +8,4 @@ aiDescription,defines action item acceptance criteria
 aiOwner,person resonsible for the action item
 aiDeadline,date action item is due by
 datetime,timestamp for meeting start
-
+term,definition of term

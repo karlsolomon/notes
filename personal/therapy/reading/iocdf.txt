@@ -1,0 +1,25 @@
+Reading through iocdf.org home page (About OCD) per Heidi Kaplan (HKaplan) instructions.
+Obsession - unwanted, intrusive thoughts, images, or urges that trigger intensely distressing feelings.
+Compulsion - behaviors in attempt to get rid of obsessions or decrease distress.
+OCD - spending enough time obsessing/doing compulsions s.t. it consumes > 1 hour per day, causes intense distress, or gets in the way of important activities that the person values.
+Obsessions
+    Common Subtypes:
+    Perfectionism-related obsession - excessive concern with a need to know/remember. Fear of losing or forgetting important information when throwing something out. Fear of making mistakes. I think I definitely have this, and have since I was in middle school. In fact it's what drove me to create this whole note-taking infrastructure to begin with. I ruminate on things a lot because I'm afraid that I'll forget them or be unable to improve future scenarios in ways that I could have had I remembered said interaction/lesson. Its hard to say exactly when it started, but I definitely remember having fear of making mistakes since middle school. E.g. failure to play basketball due to english grade not meeting "target for 2 grading periods". I would say I spent a normal amount of time on school prior to that experience, but started studying much harder after. Another perfectionism renaissance occurred after I broke my leg. This made me give up on the prospect of becoming D1 kicker/punter since I was giving up on playing football (likely b/c it was emotionally contaminated). That was my primary plan for entry into university, so after this I became far more focused on studies. I think that having to teach myself everything in isolation/from home-bound made me spend a lot of time doing studies and shifted my paradigm for what was a normal amount of time to spend studying. A third renaissance was when I was in university and focused on becoming pre-med. I was hyper-focused on studying 24/7 to the point where I didn't find value in cultivating relationships that didn't help me study or get better grades. I wasn't getting enough sleep, excercise, or eating enough calories. I was so stressed and sleep deprived that I actually started occassionally wetting the bed as an 18-20 year old (handful of times over the 3 year period). I ended up pushing away all of my friends from high school. I was particularly hard to be around since I was always stressed/thinking about school. Any hour I wasn't studying was a waste since I could've been better prepared for whatever exams were looming.
+    
+    Other Obsessions:
+    Real event/false memory obsessions - excessive concern about things that happened in the past and what impacts they may have had. Need to read about this one more. If it pertains to events I experienced then this certainly applies to me. If it pertains to events outside of my experience then it does not apply.
+    
+    Emotional Contamination - Fear of "catching" personality traits or personal characteristics of other individuals.
+    This is a far cry from the emotional contamination I've come to understand. 
+
+Compulsions:
+    Mental Compulsions - mental review of events to prevent harm/consequences. Pretty sure this one applies to me. "Harm" in this case is some experienced harm/negative consequence that I'm obsessed with preventing in the future.
+    Other Compulsions - Avoidance.
+
+Neuropathology
+    https://iocdf.org/expert-opinions/how-disease-and-medication-shape-the-brain-in-ocd/
+    https://iocdf.org/about-ocd/what-causes-ocd/
+
+ERP
+    https://iocdf.org/about-ocd/treatment/erp/
+

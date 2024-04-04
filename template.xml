@@ -2,9 +2,15 @@
 	<host>ksolomon</host>
 </personnel>
 <datetime>1711651800</datetime>
+<summary>template</summary>
 <ai>
     <aiDescription></aiDescription>
     <aiOwner>ksolomon</aiOwner>
     <aiDeadline></aiDeadline>
 </ai>
-<takeaway></takeaway>
+<terms>
+    <term></term>
+</terms>
+<takeaways>
+    <takeaway></takeaway>
+</takeaways>

@@ -1,11 +1,24 @@
 <personnel>
 	<host>ksolomon</host>
+    <requester>hkaplan</requester>
 </personnel>
 <datetime>1712160948</datetime>
-<ai>
-    <aiDescription></aiDescription>
-    <aiOwner>ksolomon</aiOwner>
-    <aiDeadline></aiDeadline>
-</ai>
-<takeaway></takeaway>
+<summary>Review of ERP and OCD definitions/examples</summary>
+<takeaways>
+    <takeaway>My most prevalent obsessions: Perfectionism (need to remember, fear of forgetting, making mistakes) and Contamination (although this may be my mis-appropriating perfectionism obsession).</takeaway>
+    <takeaway>I have experienced, at least since university, perfectionism-related obsessions</takeaway>
+    <takeaway>Prior to WFH my perfectionism compulsions were largely beneficial from a professionalism standpoint, but maladaptive from a quality of life standpoint. After WFH my compulsions were entirely detrimental.</takeaway>
+    <takeaway>ERP is most successful CBT for OCD patients. Generally faster/better restults when taken in-parallel with SRIs.</takeaway>
+    <takeaway>Further research on Emotional Contamination is needed</takeaway>
+</takeaways>
+<terms>
+    <term>OCD - Engaging in compulsions to cope with obsessions such that it takes a considerable amount of time per day and/or impedes important activies which one values</term>
+    <term>Obsession - unwanted, intrusive throughts, images, or urges leading to distressing feelings</term>
+    <term>Compulsion - behaviors in attempt to cope with obsessions/decrease distress</term>
+    <term>CBT - Cognitive Behavioral Therapy</term>
+    <term>ERP - Exposure and Response Prevention</term>
+    <term>Exposure - Act of confronting object that provokes obsession</term>
+    <term>Response - abstaining from compulsion while experiencing the exposure</term>
+    <term>Habituation - Retraining brain that the object(s) of obession is/are not actually dangerous worthy of fear</term>
+<terms>
 

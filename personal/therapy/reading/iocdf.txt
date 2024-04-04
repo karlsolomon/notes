@@ -19,7 +19,18 @@ Compulsions:
 Neuropathology
     https://iocdf.org/expert-opinions/how-disease-and-medication-shape-the-brain-in-ocd/
     https://iocdf.org/about-ocd/what-causes-ocd/
+        OCD has serotonin pathology (hence treatment w/ SSRIs). Site highlights cortex, basal ganglia, thalamus. Doesn't highlight amygdala.
+        OCD is hereditary, exeternal factors can lead to latent expression.
 
 ERP
     https://iocdf.org/about-ocd/treatment/erp/
+        Important to teach people "exactly what they're afraid of".
+        Calling Matt & D/C is basically exposure/habituation.
+        Exposure - practice confronting the thought/image/object/situation that makes you nervous or provokes the obsessions.
+        Response - choosing to not engage in the compulsion while experiencing the exposure.
+        Goal: retrain brain to not see the object of obsession as a threat.
+        ERP is doing these things under the supervision of a counselor.
+        "Fears are less likely to come true than you thought"
+        "get better at managing daily levels of risk/uncertainty"
+        Engaging in compulsions reinforce the part of the brain generating the anxiety in the first place. :/
 

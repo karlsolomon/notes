@@ -33,4 +33,4 @@ ERP
         "Fears are less likely to come true than you thought"
         "get better at managing daily levels of risk/uncertainty"
         Engaging in compulsions reinforce the part of the brain generating the anxiety in the first place. :/
-
+        Probably a good introduction for ERP into "perfectionism" pertaining to coding is to contribute to open-source projects on github. This will also help when interviews roll around.

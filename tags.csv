@@ -2,6 +2,7 @@ tag,definition
 personnel,container for people involved in meeting
 attendee,person who was involved in the conversation
 host,person who led the discussion
+summary,description of meeting/event
 takeaway,lesson learned (conclusion) from the meeting
 ai,action item container
 aiDescription,defines action item acceptance criteria

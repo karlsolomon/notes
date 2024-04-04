@@ -9,6 +9,7 @@ ai,action item container
 aiDescription,defines action item acceptance criteria
 aiOwner,person resonsible for the action item
 aiDeadline,date action item is due by
+aiCompletion,date action item way completed
 datetime,timestamp for meeting start
 terms,wrapper for list of terms
 term,definition of term

@@ -1,0 +1,20 @@
+<personnel>
+	<host>ksolomon</host>
+</personnel>
+<datetime>1712275809</datetime>
+<summary>Discussed calls with mphillips, dharris/charris, and reinforcement learning</summary>
+<ai>
+    <aiDescription>Read Brain Lock - Jeffrey Schwartz before next session</aiDescription>
+    <aiOwner>ksolomon</aiOwner>
+    <aiDeadline>Apr 15, 2024</aiDeadline>
+    <aiCompletion></aiCompletion>
+</ai>
+<terms>
+    <term>Habituation - repeatedly performing action/object of obsession leads to eventual decline in anxiety level when performing that action.</term>
+    <term>Inhibitory Learning - repeatedly performing action/object of obsession provides sufficient empirical evidence to allow user to discredit the associated feelings of anxiety, and perform the action anyway.</term>
+</terms>
+<takeaways>
+    <takeaway>It is possible to reliably act in defiance of obsession given enough empirical data suggesting that the obsession is unwarrented/untrustworthy.</takeaway>
+    <takeaway>My anxiety model is trained on bad data. In order to modify the "default" response I have to re-train the model on new/good data.</takeaway>
+</takeaways>
+

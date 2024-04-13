@@ -1,13 +1,12 @@
 <personnel>
 	<host>ksolomon</host>
 </personnel>
-<datetime>1711651800</datetime>
-<summary>template</summary>
+<datetime>1713041742</datetime>
+<summary>Performed first "easy" leetcode problem.</summary>
 <ai>
     <aiDescription></aiDescription>
     <aiOwner>ksolomon</aiOwner>
     <aiDeadline></aiDeadline>
-    <aiCompletion></aiCompletion>
 </ai>
 <terms>
     <term></term>
@@ -15,3 +14,4 @@
 <takeaways>
     <takeaway></takeaway>
 </takeaways>
+

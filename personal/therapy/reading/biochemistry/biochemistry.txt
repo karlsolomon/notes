@@ -4,8 +4,23 @@ https://med.stanford.edu/ocd/about/understanding.html
 
 Globus Pallidus - Controls conscious and proprioceptive movements. Supports motivation/cognition. (Is this *motivation* why I've felt the need for testosterone?)
 
+Limbic system - behavioral/emotional response circuit for survival. Feeding, reproduction, care for young, & fight/flight.
 
 Loop:
 Orbital Frontal Cortex --> Cingulate Gyrus --> Striatum (caudate nucleus + putamen) --> Globus Pallidus --> Thalamus --> Frontal Cortex.
+Ablating varios links in this loop have proven to help pt with treatment-resistent OCD.
+
+NTs
+PT have behavioral hypersensitivity and neuroendocrinological hyposensitivity to the activation of serotonin receptors.
+    Serotonin receptors have following consequences:
+        HT1 - Inhibits Adenylate Cyclase (makes cAMP). cAMP is second messenger/regulator for memory, metabolism, gene regulation, and immune function.
+        HT2 - Activates Phospholipase C. Part of production of DAG and IP3. IP3 leads to calcium wave intercellularly.
+            A: Vascular Smooth muscles vasoconstriction, Visceral smooth muscle (GI, respiration, urinary), Platelets, Cerebral neurons in prefrontal cortex. Antipsychotics act here by blocking the receptor. Antagonist --> weight gain.
+            B: Rat gastric fundus
+            C: Vasodilation through EDRF release, regulates CSF (spine) formation.
+        HT3 - Ligand gated ion channel.
+        HT4-7 - Activate Adenylate Cyclase.
+
+Sertraline desensitizes Serotonin 5HT2 receptors. Acting specifically on 5HT2 is the "selective" part of SSRI. Prevents re-uptake so serotonin impacts more nearby nerve cells. Depression caused by low levels of mono-amine NTs: serotonin, dopamine, epinephrine, norepinephrine.
 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4476073/

@@ -21,19 +21,34 @@
     <aiDeadline>tbd</aiDeadline>
     <aiCompletion>tbd</aiCompletion>
 </ai>
+<ai>
+    <aiDescription>Forgive self</aiDescription>
+    <aiOwner>ksolomon</aiOwner>
+    <aiDeadline>tbd</aiDeadline>
+    <aiCompletion>tbd</aiCompletion>
+</ai>
 <terms>
     <term>Relabel - identify obsessions/compulsions for what they are</term>
     <term>Reattribute - assign cause of thoughts/urges as OCD</term>
     <term>Refocus - respond to thoughts/urges in constructive way</term>
     <term>Revalue - conscious/non-automatic dismissal of obsessions/compulsions, resume normal/constructive life</term>
-    <term></term>
-    <term></term>
-    <term></term>
+    <term>Orbital Cortex - Error Detection. Short stimulus from pavlovian learning. Long stimulus when expected outcome of behavior was negative when expected positive.</term>
+    <term>Cingulate Gyrus - Gut sensation of fear/dread. Amplifies orbital cortex signals.</term>
+    <term>Caudate Nucleus - Automatic Transmission for Thinking. Held "open" in OCD.</term>
 </terms>
 <takeaways>
     <takeaway>Intro: I probably had OCPD as adolescent/young adult</takeaway>
+    <takeaway>Intro: I need to be more aggressive/assertive in fighting back</takeaway>
     <takeaway>Relabel: Process of taking notes/reflecting is a way to "contront" feelings consciously which is something I haven't done in a while</takeaway>
     <takeaway>Relabel: Strong "Impartial Spectator" is key</takeaway>
     <takeaway>Relabel: Stay Busy</takeaway>
+    <takeaway>Reattribute: Pt describes abstaining from compulsion "Painful"</takeaway>
+    <takeaway>Reattribute: OrbitalCortex:OCD::MotorCortex:Tourette's</takeaway>
+    <takeaway>Reattribute: It is often "exhausting" to refute obsession. Requires fight.</takeaway>
+    <takeaway>Reattribute: Caudate Nucleus "gate" is bypassed/shorted and allows excessive signals b/t Orbital Cortex and Cingulate Gyrus.</takeaway>
+    <takeaway>Reattribute: Common to hate self and feel guilt/inadequacy. Key step to recovery is forgiving self.</takeaway>
+    <takeaway>Reattribute: Retrain neural network. Perform constructive actions/thoughts when anxiety arises to weaken the OCD network and strengthen (myelin) positive response network. This will make "default" option positive over time.</takeaway>
+    <takeaway>Refocus: </takeaway>
+    <takeaway>Revalue: </takeaway>
 </takeaways>
 

@@ -58,7 +58,7 @@ Ch 2 - Reattribute
 Step 3: Refocus
 
 **It's not how you feel, but what you do that counts**
-Refocus activity must be something you "enjoy" doing, not "frenetic".
+Refocus activity must be something you "enjoy" doing, not "frenetic
 Frenetic - Energetic, disordered, anxiety-driven activity.
 
 I started to feel effects of OCD when I paid more attention to "self-care" and "listening to your body" speak. I started to do things like take naps when I'm tired, sleep longer if I'm tired, etc. This relaxing of "fight" is what led to onset of OCD. The desire to seek comfort. This probably coincided with my reduction of OCPD tendencies. I became far more non-confrontational/argumentative, but simultaneously far more apathetic.
@@ -73,4 +73,40 @@ Brain Neuropathophysiology Summary:
 Orbital Cortex --> "something is wrong"
 Cingulate Gyrus --> "something really bad is going to happen if this is not fixed"
 Caudate Nucleus --> Asleep at the wheel. Not filtering out these signals as "ridiculous"
+
+Page 81/82: I similarly have difficulty reading due to frequent intrusive thoughts causing me to re-read lines/paragraphs/pages. I've always been a "slow" reader and I think/thought this is/was the case for everyone. Developed a "trick" to only read things the night before an exam b/c the added pressure/anxiety of the looming exam allowed me to focus far more sharply so I could get the task done faster. Again, I've always understood this to be a tactic that numerous people employ for motivation. Maybe I'm just missing the severity of Michael's re-reading in the book and mine is nowhere near as bad. Also noticed that I have a compulsion while reading to bite my nails.
+
+I also think I have a bit of a "self-harm" OCDism. I avoid things that would do me harm. I obviously make exceptions, but I'm very particular about some trivialities that would "do me harm" otherwise.
+    - Always having obsession about "soft" and clothing. Would never wear pants growing up. Could only have small handful of shirts b/c everything else was uncomfortable.
+        - parents: They don't think I was "too" itchy. Wouldn't pick it if I didn't like the way it felt, but just liked "texture". Sheets needed to be "soft". Licking lips, chewing on fingernails
+    - Chapstick.
+    - I spend a lot of time optimizing computer setup so it is less harmful to my eyesight.
+    - Gluten self-harm. Maybe possibly over it by now.
+    - Bedsheets/things have to feel soft.
+    - Relationships. Can't enter new romatic relationships b/c I don't want to be hurt. I didn't give Isha much blame, but she was a subject of the non-communicative/avoidance compulsion. I now have a lot of fear of entering new relationships.
+        - Compulsion: rumination on feeling bad from elizabeth relationship. Fear of self-harm means I can't enter new relationships, even though I have a value that is contrary (value family/kids).
+        - Now I listen to almost exclusively foreign-language and non-verbal music because most music has lyrics on relationships and whenever I hear those I inevitably ruminate on Elizabeth and my current situation.
+    - When Dad was gone a lot I told him "I felt he didn't love me anymore".
+    - It is valuable to share information/feelings with others because it removes the resonsibility of you having to think about it/remember it.
+
+
+I was pre-med originally and changed career paths because came to understand that insurance companies would get in the way of the practice that I'd want to do. Because I couldn't treat patients in the ideal (perfect) way I gave up on that profession. Instead I chose a profession where solutions were more black/white. If you didn't have bugs, you met the requirements, and you were on schedule, then in a sense the job was done perfectly.
+
+As a high schooler I read loads of epistemlogical books to get at source of "truth" and came to realize that in a religious sense it is pretty impossible to know. As a result I have taken a far more agnostic viewpoint. So when churches say they have the "optimal"/"correct" interpretation of some text I find that hard to accept. When there is ambiguity you cannot reach a conclusion with full confidence which means it cannot be a "perfect" interpretation. This view/rigidity has led me to be unable to maintain relationships at churches.
+
+I don't know if perfectionism has led to snobbery, however I've definitely become that wrt coffee and barbeque.
+
+Because I've generally held high standards for myself, when I'm not meeting those standards I get incredibly depressed.
+
+Intrusive thought doesn't have to completely leave your mind in order for you to refocus.
+
+
+Perfectionism:
+    Began in middle school with limit/target grades. Started to obsess over it after the basketball trauma.
+    Based on my "own" definition of perfection.
+        MS - target/limit --> OK because achievable
+        HS - All A's --> OK because achievable
+        College - 4.0 with hardest possible major (to get into top med school on merit) --> Because this was not achievable I obsessed over it so much that I couldn't form new relationships. Couldn't do anything unless it was for the sake of getting the 4.0. Last semester w/ 4.0 was whilest taking Embedded Systems. Very difficult for me, plus big bell curve means very few A's. Ended up with B+, but spent 40-60 hours/wk on that class alone and started to really negatively affect my only healthy relationship (Elizabeth), because I stopped making her a priority. Once the semester ended I no longer had 4.0 and could no longer achieve "perfection". I started looking into different career paths and found Software Engineering. Enables "perfectionism" because project done on time, meets scope, and with no bugs is "perfection" and can be achievable. Eventually found out that insurance companies drive medical practice, not MDs, so I would be unable to treat patients "perfectly". I couldn't stomach this so I switched to the career where I could potentially meet perfection.
+    Stryker - able to achieve my definition of perfection, so I had a good experience and look back on that time fondly, even though I had literally no life/hobbies outside of work.
+    Nvidia - no attention to onboarding and no help when I asked made achieving perfection impossible which led to big rumination/avoidance loop.
 

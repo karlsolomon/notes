@@ -1,79 +1,90 @@
 Intro
 
-    Anatomy: Caudate Nucleus + Putamen control which "gear" the brain is in
-    OCD Dx usually comes as relief to pt
-    Obsession - Intrusive thoughts
-    Compulsion - Behavior/urge to alleviate fear/anxiety caused by obsession
-    Purpose of book = Organize thoughts/behaviors s.t. you can respond to obsessions with goal-oriented behaviors, not self-destructive ones
-    
-    4 R's
-        Relabel - identify obsessions/compulsions for what they are
-        Reattribute - assign cause of thoughts/urges as OCD
-        Refocus - respons to thoughts/urges in constructive way
-        Revalue - conscious/non-automatic, but relatively trivial dismissal of obsessions/compulsions and resume normal/constructive life.
-    
-    OCPD - me working in groups middle school - college & (possibly) at Stryker. Possible that Matt helped me get over this. "Doesn't care that uncompromising behavior annoys others"
-    
-    OCD = dislike the behavior, OCPD = like the behavior.
+	Anatomy: Caudate Nucleus + Putamen control which "gear" the brain is in
+	OCD Dx usually comes as relief to pt
+	Obsession - Intrusive thoughts
+	Compulsion - Behavior/urge to alleviate fear/anxiety caused by obsession
+	Purpose of book = Organize thoughts/behaviors s.t. you can respond to obsessions with goal-oriented behaviors, not self-destructive ones
+	
+	4 R's
+		Relabel - identify obsessions/compulsions for what they are
+		Re-attribute - assign cause of thoughts/urges as OCD
+		Refocus - response to thoughts/urges in constructive way
+		Revalue - conscious/non-automatic, but relatively trivial dismissal of obsessions/compulsions and resume normal/constructive life.
+	
+	OCPD - me working in groups middle school - college & (possibly) at Stryker. Possible that Matt helped me get over this. "Doesn't care that uncompromising behavior annoys others"
+	
+	OCD = dislike the behavior, OCPD = like the behavior.
 
 Ch 1 - Relabel
-    Flooding - throwing pt in "deep end" to directly confront fears. Usually not successful.
-    Pt must "fight back/show defiance" against compulsion. This sounds similar to what I felt immediately before calling David/Cassandra. Prior to OCD diagnosis I have contemplated seeking out testosterone therapy since I feel I am far more "apathetic" and have way less "fight" in me than I did before.
-    Pt must leverage idea of Adam Smith's "Impartial Spectator" to rationally distinguish real from OCD anxieties.
-    Boredom is biggest enemy of OCD recovery. Even if it's not the best job you qualify for, just having something to get out and be responsible for is important.
-    Common for people w/ OCD to be attracted to one another. Interesting in that this could self-propagate the disorder.
-    Use "ridiculous" spell from Harry Potter to trivialize the obsession.
-    
-    Endearment toward the compulsion leads to life spinning out of control.
-    Helpful to keep diary/notes on progress.
-    Relabeling - identifying & demonizing obsessive thoughts s.t. you have no urge to engage in the compulsion.
+	Flooding - throwing pt in "deep end" to directly confront fears. Usually not successful.
+	Pt must "fight back/show defiance" against compulsion. This sounds similar to what I felt immediately before calling David/Cassandra. Prior to OCD diagnosis I have contemplated seeking out testosterone therapy since I feel I am far more "apathetic" and have way less "fight" in me than I did before.
+	Pt must leverage idea of Adam Smith's "Impartial Spectator" to rationally distinguish real from OCD anxieties.
+	Boredom is biggest enemy of OCD recovery. Even if it's not the best job you qualify for, just having something to get out and be responsible for is important.
+	Common for people w/ OCD to be attracted to one another. Interesting in that this could self-propagate the disorder.
+	Use "ridiculous" spell from Harry Potter to trivialize the obsession.
+	
+	Endearment toward the compulsion leads to life spinning out of control.
+	Helpful to keep diary/notes on progress.
+	Relabeling - identifying & demonizing obsessive thoughts s.t. you have no urge to engage in the compulsion.
 
-Ch 2 - Reattribute
-    OCD and Parkinsons affect the striatum
-    When urge to do compulsion, sit for 15min waiting period and consciously monitor anxiety level without engaging in compulsion.
-    Is OCD an addiction/physical dependence? Maybe there's some drug/hormone/neurotransmitter (serotonin/dopamine?) that's released when engaging in the compulsion.
-    
-    Barbara - Mr.Coffee : credits pregnancy/child with helping her reprioritize to reduce stress since it could harm the baby. So her perfectionism decreased at work which actually had a positive impact on her performance and OCD tendencies. I feel like I was kind of the opposite. I was more OCPD and whenever I decided to be less stressed/more apathetic was when I let that take over and OCD started to rule my decision-making process.
-    
-    "Painful" is frequent word to describe refusing to give into compulsion.... looooool. This is so me.
-    
-    Caudate Nucleus "gate" is held open in people with OCD. Similar to how people with Parkinson's have to make conscious effort for motor control, OCD requires conscious effort to not engage in compulsion. Both are exhausting for respective parties.
-    
-    OCD is genetic & related to tourettes. Striatum is fucked for both, OCD gets bad signals from orbital-cortex, Tourette's gets bad signals from motor-cortex. Overactive Orbital Cortex = sensation that shit is bad/wrong more than it really is.
-    
-    functions:
-        Orbital Cortex - error-detection. Used in pavlovian reward/punishment learning. However, active more/longer when a behavior was expected to have positive outcome, but instead had negative one.
-        Cingulate Gyrus - gut-level fear/dread. Amplifies "error" detection from orbital cortex.
-        Caudate Nucleus - Automatic Transmission for thinking
-        Sensory-motor cortex - fine motor control
-        Putamen - Automatic Transmission for movement
-        Thalamus - relay/switch for senses
-    
-    If orbital cortex continuously "misfires" it leads pt to continuously think that something is wrong and they have to perform some action/compulsion to resolve it. Left side is especially active in the presence of the OCD trigger.
-    
-    Basically need to retrain new neural nets and repeat constructive behaviours/responses in order to beef up/reinforce said pathway myelin sheath (@Physio). This will simultaneously weaken the OCD circuit.
-    
-    Common to hate self and feel guilt/inadequacy. Important step to healing is learning to forgive oneself.**
+Ch 2 - Re-attribute
+	OCD and Parkinson's affect the striatum
+	When urge to do compulsion, sit for 15min waiting period and consciously monitor anxiety level without engaging in compulsion.
+	Is OCD an addiction/physical dependence? Maybe there's some drug/hormone/neurotransmitter (serotonin/dopamine?) that's released when engaging in the compulsion.
+	
+	Barbara - Mr.Coffee : credits pregnancy/child with helping her re-prioritize to reduce stress since it could harm the baby. So her perfectionism decreased at work which actually had a positive impact on her performance and OCD tendencies. I feel like I was kind of the opposite. I was more OCPD and whenever I decided to be less stressed/more apathetic was when I let that take over and OCD started to rule my decision-making process.
+	
+	"Painful" is frequent word to describe refusing to give into compulsion.... looooool. This is so me.
+	
+	Caudate Nucleus "gate" is held open in people with OCD. Similar to how people with Parkinson's have to make conscious effort for motor control, OCD requires conscious effort to not engage in compulsion. Both are exhausting for respective parties.
+	
+	OCD is genetic & related to Tourette's. Striatum is fucked for both, OCD gets bad signals from orbital-cortex, Tourette's gets bad signals from motor-cortex. Overactive Orbital Cortex = sensation that shit is bad/wrong more than it really is.
+	
+	functions:
+		Orbital Cortex - error-detection. Used in Pavlovian reward/punishment learning. However, active more/longer when a behavior was expected to have positive outcome, but instead had negative one.
+		Cingulate Gyrus - gut-level fear/dread. Amplifies "error" detection from orbital cortex.
+		Caudate Nucleus - Automatic Transmission for thinking
+		Sensory-motor cortex - fine motor control
+		Putamen - Automatic Transmission for movement
+		Thalamus - relay/switch for senses
+	
+	If orbital cortex continuously "misfires" it leads pt to continuously think that something is wrong and they have to perform some action/compulsion to resolve it. Left side is especially active in the presence of the OCD trigger.
+
+	Basically need to retrain new neural nets and repeat constructive behaviours/responses in order to beef up/reinforce said pathway myelin sheath (@Physio). This will simultaneously weaken the OCD circuit.
+	
+	Common to hate self and feel guilt/inadequacy. Important step to healing is learning to forgive oneself.**
 
 Step 3: Refocus
 
-**It's not how you feel, but what you do that counts**
-Refocus activity must be something you "enjoy" doing, not "frenetic
-Frenetic - Energetic, disordered, anxiety-driven activity.
+	**It's not how you feel, but what you do that counts**
+	Refocus activity must be something you "enjoy" doing, not "frenetic
+	Frenetic - Energetic, disordered, anxiety-driven activity.
+	
+	I started to feel effects of OCD when I paid more attention to "self-care" and "listening to your body" speak. I started to do things like take naps when I'm tired, sleep longer if I'm tired, etc. This relaxing of "fight" is what led to onset of OCD. The desire to seek comfort. This probably coincided with my reduction of OCPD tendencies. I became far more non-confrontational/argumentative, but simultaneously far more apathetic.
+	
+	Take notes on successful refocus instances.
+	
+	"People with OCD tend to become exhausted from what they have come to view as a hopeless struggle...Refocusing helps to re-energize them."
+	
+	Best refocusing activities require concentration, strategy, and other people.
+	
+	Brain Neuropathophysiology Summary:
+	Orbital Cortex --> "something is wrong"
+	Cingulate Gyrus --> "something really bad is going to happen if this is not fixed"
+	Caudate Nucleus --> Asleep at the wheel. Not filtering out these signals as "ridiculous"
+	
+	Page 81/82: I similarly have difficulty reading due to frequent intrusive thoughts causing me to re-read lines/paragraphs/pages. I've always been a "slow" reader and I think/thought this is/was the case for everyone. Developed a "trick" to only read things the night before an exam b/c the added pressure/anxiety of the looming exam allowed me to focus far more sharply so I could get the task done faster. Again, I've always understood this to be a tactic that numerous people employ for motivation. Maybe I'm just missing the severity of Michael's re-reading in the book and mine is nowhere near as bad. Also noticed that I have a compulsion while reading to bite my nails.
+Step 4: Revalue
+        "Intrusive Thoughts" are happening in spite of will, not because of it.
+	"Besiege" patient with exposure and ask them to "ride it out" for extended period of time is not readily available in self-treatment. Instead easier to practice "self-directed response prevention" for incrementally longer periods of time.
+	"powerful mind" can take note of sublet changes and understand their implications. This requires being present/cognizant.
+	Common to frequently struggle with/ruminate on "where would I be had I not had OCD".
+	Biggest mistake - let false pride keep you from seeking help.
+	TL;DR: Stop doing compulsions, feel better about yourself.
+	Revalue OCD down and achievements up.
+	Must learn to "devalue" the obsessions
 
-I started to feel effects of OCD when I paid more attention to "self-care" and "listening to your body" speak. I started to do things like take naps when I'm tired, sleep longer if I'm tired, etc. This relaxing of "fight" is what led to onset of OCD. The desire to seek comfort. This probably coincided with my reduction of OCPD tendencies. I became far more non-confrontational/argumentative, but simultaneously far more apathetic.
 
-Take notes on successful refocus instances.
-
-"People with OCD tend to become exhausted from what they have come to view as a hopeless struggle...Refocusing helps to reenergize them."
-
-Best refocusing activities require concentration, strategy, and other people.
-
-Brain Neuropathophysiology Summary:
-Orbital Cortex --> "something is wrong"
-Cingulate Gyrus --> "something really bad is going to happen if this is not fixed"
-Caudate Nucleus --> Asleep at the wheel. Not filtering out these signals as "ridiculous"
-
-Page 81/82: I similarly have difficulty reading due to frequent intrusive thoughts causing me to re-read lines/paragraphs/pages. I've always been a "slow" reader and I think/thought this is/was the case for everyone. Developed a "trick" to only read things the night before an exam b/c the added pressure/anxiety of the looming exam allowed me to focus far more sharply so I could get the task done faster. Again, I've always understood this to be a tactic that numerous people employ for motivation. Maybe I'm just missing the severity of Michael's re-reading in the book and mine is nowhere near as bad. Also noticed that I have a compulsion while reading to bite my nails.
 
 

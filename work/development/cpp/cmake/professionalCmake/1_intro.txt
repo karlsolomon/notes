@@ -1,0 +1,39 @@
+Recommended Project Structure (Out of Source):
+    BASE_DIR
+        |>source
+            |>CMakeLists.txt
+            |>[source files]
+        |>build
+            |>CMakeCache.txt
+            |>[obj/bin files]
+
+Most Basic Execution
+    mkdir build
+    cd build
+    cmake -G "Unix makefiles" ../source  #-G is generator. Omission of -G will use default generator.
+
+Basic Cmake
+    cmake_minimum_required(VERSION 3.2)
+    project(MyApp)
+    add_executable(MyExe main.cpp)
+    # cmake_minimum_required(VERSION <X.Y.Z>) should always be the first line of the CMakeLists.txt file.
+        "VERSION" keyword required
+
+project(projectName # mandatory
+    [VERSION major[.minor[.patch[.tweak]]]] # optional - projection version # 
+    [LANGUAGES languageName ...] #optional - programming language for project
+    )
+
+project(MyProj C CXX) - default
+    see below for supported languages
+    https://cmake.org/cmake/help/latest/command/project.htmlRecommended
+
+add_executable(target src1 [src2 ...])
+
+Commenting in CmakeList.txt
+    in-line
+        '#'
+    Block
+        #[=[
+        ...
+        ]=]

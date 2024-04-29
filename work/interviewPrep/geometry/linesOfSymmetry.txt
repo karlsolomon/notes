@@ -1,0 +1,35 @@
+As promised, here is the take-home problem that we use in favor of coding on a whiteboard:
+
+ 
+
+I would like you to create and implement an algorithm that, when given a set of points on an infinite plane, will return the complete set of lines of symmetry for those points.
+
+ 
+
+Okay, that's a lot of detail packed into just one sentence, I know. A line of symmetry is defined to be a line such that every point in the input set, when reflected across the line, finds another point in the input set. And we would like the code to find for us the guaranteed-complete set of these lines.
+
+ 
+
+An image that demonstrates the concept of lines of symmetry, where each point in the input set can be thought of as a vertex of an input shape, can be found here:
+
+https://www.onlinemathlearning.com/image-files/xlines-symmetry.png.pagespeed.ic.jD1kSL8EFu.png
+
+ 
+
+Although note that, unlike the image, for this problem statement the inputs are only the vertex points, not the complete shapes, and they can form any arbitrary pattern, not just the shapes shown in the image. Also because we both know that users are very creative in terms of probing the limits of any software that we write, your algorithm should be ready for the points in the input set to be rotated or translated by any arbitrary amount.
+
+ 
+
+I have intentionally left the problem definition open-ended in order to give you the freedom to make choices in how you approach the solution, so feel free to pick whatever programming languages, frameworks, libraries, and even representations for points and lines that you would like - my only ask is that you are able to provide a rationale for your choices and that the core algorithm is written by you.
+
+ 
+
+Please don’t feel like you have to spend many hours creating a perfect solution to this coding challenge, as the intent is for you to be able to complete it within your spare time while still giving me a good sense for how you approach logical and programming problems. Once you have a solution that you’re ready to share, along with an estimate of how many hours it took you to create it, please reach out to us so that we can review it.
+
+ 
+
+And if you have any questions at all, just let me know and I’ll be happy to jump on a call with you.
+
+ 
+
+Thank you, and I look forward to speaking with you again soon!

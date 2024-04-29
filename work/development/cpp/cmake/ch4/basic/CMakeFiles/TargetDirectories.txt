@@ -1,0 +1,3 @@
+/home/ksolomon/git/notes/work/development/cpp/cmake/ch4/CMakeFiles/main.dir
+/home/ksolomon/git/notes/work/development/cpp/cmake/ch4/CMakeFiles/edit_cache.dir
+/home/ksolomon/git/notes/work/development/cpp/cmake/ch4/CMakeFiles/rebuild_cache.dir

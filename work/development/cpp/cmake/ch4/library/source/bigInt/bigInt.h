@@ -12,6 +12,7 @@ public:
     BIGINT_ERROR_UNDEFINED,
     BIGINT_ERROR_COUNT
   } BIGINT_E;
+
   UBigInt();
   UBigInt(uint64_t lhs, uint64_t rhs);
   UBigInt(const UBigInt &a);
@@ -30,6 +31,7 @@ public:
   bool operator>=(const UBigInt &a);
   bool operator<(const UBigInt &a);
   bool operator>(const UBigInt &a);
+  BIGINT_E get_error() const noexcept;
 
 private:
   uint64_t lhs;

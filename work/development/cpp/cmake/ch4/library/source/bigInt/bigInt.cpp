@@ -1,17 +1,17 @@
 #ifndef BIGINT_H
 #define BIGINT_H
+#include "bigInt.h"
 #include <cstdint>
 #include <stdexcept>
 class UBigInt {
 
+private:
+  uint64_t lhs;
+  uint64_t rhs;
+  BIGINT_E err;
+};
+
 public:
-  typedef enum {
-    BIGINT_ERROR_NONE,
-    BIGINT_ERROR_UNDERFLOW,
-    BIGINT_ERROR_OVERFLOW,
-    BIGINT_ERROR_UNDEFINED,
-    BIGINT_ERROR_COUNT
-  } BIGINT_E;
   UBigInt() {
     this->lhs = 0;
     this->rhs = 0;
@@ -23,22 +23,36 @@ public:
   }
   ~UBigInt();
   UBigInt operator+(const UBigInt &a) {
-    UBigInt res = UBigInt(a); // TODO: TOIJSOIJ
+    UBigInt res = UBigInt(a); 
     res += *this;
     return res;
   }
-  void operator+=(const UBigInt &a) noexcept(false) {
+  void operator+=(const UBigInt &a) {
     this->rhs += a.rhs;
     if (this->rhs < a.rhs) {
       this->lhs++; // carry
     }
     this->lhs += a.lhs;
     if (*this < a) {
-      throw std::overflow_error(
-          "unsigned addition resulted in smaller number.");
+      this->err = BIGINT_ERROR_OVERFLOW;
     }
   }
-  UBigInt operator-(const UBigInt &a);
+  UBigInt operator-(const UBigInt &a)
+  {
+    UBigInt res = UBigInt(this);
+    if(this < &a) {
+      res.err = BIGINT_ERROR_UNDERFLOW;
+    }
+    else {
+      res.lhs -= a.lhs;
+      if(a.rhs > res.rhs) {{
+        res.lhs--;
+      }
+      res.rhs -= a.rhs;
+    }
+  return res;
+    
+  }
   void operator-=(const UBigInt &a) noexcept(false);
   UBigInt operator*(const UBigInt &a);
   void operator*=(const UBigInt &a) noexcept(false);
@@ -50,11 +64,6 @@ public:
   bool operator>=(const UBigInt &a);
   bool operator<(const UBigInt &a);
   bool operator>(const UBigInt &a);
-
-private:
-  uint64_t lhs;
-  uint64_t rhs;
-  BIGINT_E err;
-};
+  BIGINT_E get_error() { return this->err; }
 
 #endif // !BIGINT_H

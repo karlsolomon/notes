@@ -28,3 +28,20 @@ target_link_libraries(targetName
     <PRIVATE|PUBLIC|INTERFACE> lib1 [lib2 ...]
     [<PRIVATE|PUBLIC|INTERFACE> lib3 [lib4 ...]]
 )
+
+
+#Example with multiple libraries when we are creating the library from source
+add_library(Collector src1.cpp)
+add_library(Algo src2.cpp)
+add_library(Engine src3.cpp)
+add_library(Ui src4.cpp)
+add_executable(MyApp main.cpp)
+target_link_libraries(
+    Collector
+    PUBLIC Ui
+    PRIVATE Algo Engine)
+
+target_link_libraries(MyApp PRIVATE Collector)
+
+#Example with prebuilt libraries
+

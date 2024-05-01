@@ -1,0 +1,1 @@
+g++ -I/usr/include -L/usr/lib main.cpp -o main -lgsl -lgslcblas -lm

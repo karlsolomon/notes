@@ -44,4 +44,9 @@ target_link_libraries(
 target_link_libraries(MyApp PRIVATE Collector)
 
 #Example with prebuilt libraries
+#g++ -I/usr/include -L/usr/lib main.cpp -o Main -lgsl -lgslcblas -lm
+set(CMAKE_C_FLAGS_INIT "-I/usr/include")
+add_executable(Main main.cpp)
+target_link_libraries(Main -lgsl -lgslcblas -lm) #libgsl.so in /usr/lib
+
 

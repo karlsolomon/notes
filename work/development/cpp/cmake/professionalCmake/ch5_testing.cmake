@@ -1,4 +1,6 @@
-# 5.1 Testing
+#[[
+5.1 TESTING
+]]
 
 cmake_minimum_required(VERSION 3.29)
 project(MyProj VERSION 4.7.2)
@@ -23,7 +25,9 @@ cmake --build . --config Debug
 ctest -C Debug #-C is same as --build-config
 ]]
 
-# 5.2 Installing
+#[[
+5.2 INSTALLING
+]]
 # Install copies files from build directory to install location.
 cmake_minimum_required(VERSION 3.14)
 project(MyProj VERSION 4.7.2)
@@ -65,6 +69,29 @@ install(TARGETS AlgoSDK FILE_SET api)
     cmake --install . --prefix <buildDir>
 ]]
 
-ijoi
+#[[
+5.3 PACKAGING
+]]
+# cpack = project ==> zip
+# performs multiple cmake --install commands
+# Basic Example:
+cmake_minimum_required(VERSION 3.14)
+projet(MyProj VERSION 4.7.2)
+add_executable(MyApp ...)
+add_library(AlgoRuntime SHARED ...)
+add_library(AlgoSDK STATIC ...)
+install(TARGETS MyApp AlgoRuntime AlgoSDK)
+
+#proj-specific
+set(CPACK_PACKAGE_NAME "MyProj")
+set(CPACK_PACKAGE_VENDOR "MyCompany")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example project")
+
+#Typically same V projects
+
+
+
+
+
 
 

@@ -24,5 +24,47 @@ ctest -C Debug #-C is same as --build-config
 ]]
 
 # 5.2 Installing
+# Install copies files from build directory to install location.
+cmake_minimum_required(VERSION 3.14)
+project(MyProj VERSION 4.7.2)
+add_executable(MyApp ...)
+add_library(AlgoRuntime SHARED ...)
+add_library(AlgoSDK STATIC ...)
+install(TARGETS MyApp AlgoRuntime AlgoSDK) # assumes location based on OS
+
+    #Headers
+        #OLD 1
+install(FILES a.h b.h DESTINATION include/myproj)
+install(DIRECTORY headers/myproj DESTINATION include)
+        #OLD 2
+install(DIRECTORY headers/ DESTINATION include/myproj)
+        #NEW (2.23) - using "File sets"
+add_library(AlgoSDK ...)
+target_sources(AlgoSDK
+    PUBLIC
+        FILE_SET api
+        TYPE HEADERS
+        BASE_DIRS headers
+        FILES
+            headers/myproj/sdk.h
+            headers/myproj/sdk_version.h
+)
+install(TARGETS AlgoSDK FILE_SET api)
+    # FILE_SETS assume the following structure:
+|>BASE_DIR
+  |>include
+    |>myproj
+      ->sdk.h
+      ->sdk_version.h
+
+#[[ To 1. configure 2. build 3. install a project:
+    mkdir build
+    cd build
+    cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug ../source
+    cmake --build .
+    cmake --install . --prefix <buildDir>
+]]
+
+ijoi
 
 

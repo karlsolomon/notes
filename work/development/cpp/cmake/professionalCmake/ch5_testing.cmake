@@ -83,14 +83,26 @@ add_library(AlgoSDK STATIC ...)
 install(TARGETS MyApp AlgoRuntime AlgoSDK)
 
 #proj-specific
-set(CPACK_PACKAGE_NAME "MyProj")
-set(CPACK_PACKAGE_VENDOR "MyCompany")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example project")
+set(CPACK_PACKAGE_NAME MyProj)
+set(CPACK_PACKAGE_VENDOR MyCompany)
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example project") # surround vars with quotes if contain spaces
 
-#Typically same V projects
+#Typically same ∀ projects
+set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CPACK_PACKAGE_NAME})
+set(CPACK_VERBATIM_VARIABLES TRUE)
+
+#writes out input file for cpack
+include(CPack)
 
 
-
+#[[
+Configure, Build, and Package a project
+    mkdir build
+    cd build
+    cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ../sourcecmake --build .
+    cpack -G "ZIP;WIX"
+common to use Release when packaging
+]]
 
 
 

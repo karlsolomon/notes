@@ -1,15 +1,15 @@
 * Talk through perfectionism pathway for professions (+ college selection)
 * I'm staring to make some progress on studying for work again (actually learning things) and I frequently get anxiety from ruminating/wishing that I had known this stuff while working.
 * Seen progress with chapstick dependence. I was able to go a whole morning without it nearby. Although I had some intrusive thoughts it was easier to dismiss them.
+* Nail biting
+* Did some setup improvement and now I have a lower barrier to doing things on computer since experience is better. Makes it easier to resist avoiding and handle the anxiety. Will start trying to do at least 1, target 2 coding problems a day as exposures.
+* Yesterday did a coding problem that I know I've solved in a more optimal way before. Implemented a better than 70% solution, however wanted to keep working on it. Found another solution, but wasn't better and felt OK leaving it after that even though it wasn't "perfect". I usually aim for top 10% in those kinds of scenarios. I could tell that OCD wanted me to feel like a failure for not attaining that, but I was able to relabel/dismiss that and not feel terrible afterward :D
 
 From Last Session:
-    Do the "functions" spreadsheet
+    Do the "functions" spreadsheet (triggers.csv)
 
 In Session:
-    Discussed IWTTG rationale. Focused on "more optimal time later". Basically chose not to TG because I fel the need to continue to prepare for interviews/work.
+    New SUDS worksheet: Trigger => "I will not/delay do/doing this compulsion" => =>
 
-Homework
-    New SUDS worksheet: Trigger => "I will not/delay doing this compulsion" => =>
-
-
+Homework:
 

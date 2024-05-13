@@ -1,0 +1,3 @@
+/home/ksolomon/professionalCmake/test/build/CMakeFiles/a.dir
+/home/ksolomon/professionalCmake/test/build/CMakeFiles/edit_cache.dir
+/home/ksolomon/professionalCmake/test/build/CMakeFiles/rebuild_cache.dir

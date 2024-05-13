@@ -1,7 +1,0 @@
-cmake_minimum_required(VERSION 3.29)
-project(MyApp)
-add_executable(a main.cpp)
-set(who "Fred")
-if("Hi from ${who}" MATCHES "Hi from (Fred|Barney).*")
-    message("${CMAKE_MATCH_1} says hello")
-endif()

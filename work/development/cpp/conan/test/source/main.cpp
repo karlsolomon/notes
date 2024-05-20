@@ -10,6 +10,9 @@ int main()
   int thin=500;
   int i,j;
   gsl_rng *r = gsl_rng_alloc(gsl_rng_mt19937);
+  for (int i = 0; i < 10; i++) {
+    printf("%d", i);
+  }
   double x=0;
   double y=0;
   printf("Iter x y\n");

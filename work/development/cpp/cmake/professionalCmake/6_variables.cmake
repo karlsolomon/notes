@@ -194,7 +194,7 @@ message("dec = ${zDec}, hex = ${zHEX}") # 20, 0x14
         Prefer cache variables. This makes control via CMAKE GUI easy.
         Avoid environment variables except maybe PATH since that is ubiquitous.
         Group like/related cache variables with prefix_varName since GUI sorts alphabetically.
-        Avoid uing same name for Cache and normal variables, new devs easily confused by behavior.
+        Avoid using same name for Cache and normal variables, new devs easily confused by behavior.
 ]]
 
 

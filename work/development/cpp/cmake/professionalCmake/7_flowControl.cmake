@@ -59,6 +59,57 @@ if(IS_SYMLINK filepath)
 if(IS_ABSOLUTE path)
 if(file1 IS_NEWER_THAN file2)
 
+#Cmake Existence Tests
+if(DEFINED name)
+    if(DEFINED VAR) # can be regular or cache (same as if(DEFINED CACHE{a} OR DEFINED ENV{a}))
+    if(DEFINED CACHE{CACHEVAR})
+    if(DEFINED ENV{ENVAR})
+if(COMMAND name)
+    # determines if CMAKE command/fn/macro exists
+if(POLICY name)
+if(TARGET name)
+if(TEST name)
+if(value IN_LIST listName) # where lisName is a variable, not a string
+
+#e.g. Conditional inclusion of library if CMAKE config is SET
+option(BUILD_MYLIB "Enable building MyLib target")
+if(BUILD_MYLIB)
+    add_library(MyLib src1.cpp src2.cpp)
+endif()
+
+
+#[[
+7.2 Looping
+]]
+
+#7.2.1 foreach()
+foreach(v IN [LISTS listVar1 ...] [ITEMS item1 ...])
+    #if BOTH LIST and ITEMS are used, ITEMS must follow LISTS
+endforeach()
+#ZIP allows you to pair data between multiple lists (uneven length => blanks)
+foreach(i IN ZIP_LISTS iList jList)
+    message("Vars:: ${i_0} ${i_1}")
+endforeach()
+
+foreach(i RANGE start stop [step])
+endforeach()
+
+#7.2.2 while()
+while(condition)
+endwhile()
+
+# 7.2.3 interupting loops
+break()
+continue()
+exit() # cmake 3.29 and up, but has conditions to work (see 20.5)
+
+#[[
+7.3 Best Practices
+    * reduce instances of strings being interpreted as variables in conditional
+    * copy result from if(x MATCHES regex) into a new local variable ASAP, since
+      CMAKE_MATCH_<n> will be overwritten by next regex operation.
+]]
+
 
 
 

@@ -36,30 +36,27 @@ add_library(AlgoRuntime SHARED ...)
 add_library(AlgoSDK STATIC ...)
 install(TARGETS MyApp AlgoRuntime AlgoSDK) # assumes location based on OS
 
-    #Headers
-        #OLD 1
+# Headers OLD 1
 install(FILES a.h b.h DESTINATION include/myproj)
 install(DIRECTORY headers/myproj DESTINATION include)
-        #OLD 2
+# OLD 2
 install(DIRECTORY headers/ DESTINATION include/myproj)
-        #NEW (2.23) - using "File sets"
+# NEW (2.23) - using "File sets"
 add_library(AlgoSDK ...)
-target_sources(AlgoSDK
-    PUBLIC
-        FILE_SET api
-        TYPE HEADERS
-        BASE_DIRS headers
-        FILES
-            headers/myproj/sdk.h
-            headers/myproj/sdk_version.h
-)
+target_sources(
+  AlgoSDK
+  PUBLIC FILE_SET
+         api
+         TYPE
+         HEADERS
+         BASE_DIRS
+         headers
+         FILES
+         headers/myproj/sdk.h
+         headers/myproj/sdk_version.h)
 install(TARGETS AlgoSDK FILE_SET api)
-    # FILE_SETS assume the following structure:
-|>BASE_DIR
-  |>include
-    |>myproj
-      ->sdk.h
-      ->sdk_version.h
+# FILE_SETS assume the following structure: |>BASE_DIR |>include |>myproj
+# ->sdk.h ->sdk_version.h
 
 #[[ To 1. configure 2. build 3. install a project:
     mkdir build
@@ -72,9 +69,8 @@ install(TARGETS AlgoSDK FILE_SET api)
 #[[
 5.3 PACKAGING
 ]]
-# cpack = project ==> zip
-# performs multiple cmake --install commands
-# Basic Example:
+# cpack = project ==> zip performs multiple cmake --install commands Basic
+# Example:
 cmake_minimum_required(VERSION 3.14)
 projet(MyProj VERSION 4.7.2)
 add_executable(MyApp ...)
@@ -82,18 +78,19 @@ add_library(AlgoRuntime SHARED ...)
 add_library(AlgoSDK STATIC ...)
 install(TARGETS MyApp AlgoRuntime AlgoSDK)
 
-#proj-specific
+# proj-specific
 set(CPACK_PACKAGE_NAME MyProj)
 set(CPACK_PACKAGE_VENDOR MyCompany)
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example project") # surround vars with quotes if contain spaces
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Example project") # surround vars with
+                                                         # quotes if contain
+                                                         # spaces
 
-#Typically same ∀ projects
+# Typically same ∀ projects
 set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CPACK_PACKAGE_NAME})
 set(CPACK_VERBATIM_VARIABLES TRUE)
 
-#writes out input file for cpack
+# writes out input file for cpack
 include(CPack)
-
 
 #[[
 Configure, Build, and Package a project
@@ -103,7 +100,3 @@ Configure, Build, and Package a project
     cpack -G "ZIP;WIX"
 common to use Release when packaging
 ]]
-
-
-
-

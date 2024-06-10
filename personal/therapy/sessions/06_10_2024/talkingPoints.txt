@@ -1,5 +1,20 @@
 Checked LI every day (except Sunday), had someone view my profile on private mode every day. At first it gave me anxiety, but now I kind of don't care.
 
-No response from the college professor.
+No response from the college professor so far.
+
+Been doing more leetcode problems. Was able to solve a problem that I couldn't solve a couple of years ago. Didn't have optimal runtime/memory complexity, but it was average and I was able to leave it at that. Though I did think about continuing to work on it XD.
+ 
+Date is on, but haven't set day/time yet.
+
+Been finding it difficult to do the boring parts of the compilers class. Made lots of progress while doing lectures/quizzes, but now that I'm on the programming assignment (and have a lot of reading to do) I'm avoiding it.
+
+Also been avoiding working on my resume for college applications.
+
+Was also super fatigued last Thursday/Friday. Didn't sleep much on Wednesday night, then slept basically all day/night Thursday/Friday.
+Taylor and Bethany were worried that I was "regressing", but really I was just really tired. Though I did no call no show to gym appointment, so that's some OG bad behavior.
+
+Goals by next sessions:
+    - At least have outline/structure for new resume (since I lost my original template).
+    - Have written some code (maybe just defining regex for tokens) for compilers project.
 
 

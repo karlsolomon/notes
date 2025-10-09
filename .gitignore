@@ -1,0 +1,39 @@
+# Core LaTeX auxiliary files
+*.aux
+*.log
+*.dvi
+*.pdf
+*.ps
+*.out
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.gz
+
+# Bibliography auxiliary files (BibTeX/BibLaTeX/Biber)
+*.bbl
+*.blg
+*.acn
+*.acr
+*.alg
+*.glg
+*.gls
+*.ilg
+*.ind
+*.ist
+
+# Editor/OS specific files (examples)
+.DS_Store
+*~
+.#*
+*.bak
+*.swp
+*.swo
+*.tmp

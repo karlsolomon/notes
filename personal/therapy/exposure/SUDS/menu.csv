@@ -1,9 +1,6 @@
 Exposure,Ritual/Compulsion to delay/not do,Discomfort/Uncertainty to tolerate,My Value,SUDS
 Reopening connections,Avoid reaching out/responding,Relationships may not be repaired,Reconnecting is valued,5
 Submitting Code,Avoidance,Confirm incompetence,Contributing to society,8
-Make Resume,Avoid confronting Nvidia work experience,Acknowledging failure,,
-Apply for Job,Avoid/Distraction,,,
-Interview for Job,,,,
 Do personal code project,Avoidance/Prevent feeling incompetent,I don't know things I think I should,Learning & making world better place (FOSS),7
 Listen to (new) music with lyrics,,,,3
 Not biting nails,Nail biting/prevent feeling distracted,Nails will distract me,Cleanliness/Hygeine,2-3
@@ -11,9 +8,15 @@ Not having chapstick,,,,
 Forced to use bad/unfamiliar tools,,,,
 Make Budget/Financial Plan,Avoid thinking about finances,Reckon with self-sufficient timeline,Financial Independence and future-readiness,
 ,,,,
+Set time-limits on coding,hyper-fixation,things being incomplete and suboptimal progress,having a life outside of work,3
+Interview for Job,,,,
+Make Resume,Avoid confronting Nvidia work experience,Acknowledging failure,,
+Apply for Job,Avoid/Distraction,,,
+Force non-coding routine/alarms,,,,
+get it working/stop touching it/no optimization,,,,
+meditative time/work on stopping rumination,,,,
+keep going on walks,,,,
 ,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
+Content of Rumination:
+wishing I hadn't done past failure/preventing future failure
+write down content of rumination (can be word/brain dump) --> This will be input to structured exposure.

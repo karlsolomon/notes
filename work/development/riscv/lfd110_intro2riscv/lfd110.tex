@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{article}
+% Packages for better formatting
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb} % Math symbols
+\usepackage{graphicx} % For including images
+\usepackage{hyperref} % For hyperlinks
+\usepackage{geometry} % Adjust page dimensions
+\usepackage{fancyhdr} % Custom headers and footers
+\usepackage{titlesec} % Custom section titles
+\usepackage{xcolor} % Color support for text highlighting
+\usepackage{enumitem} % For organized lists
+\usepackage{float} % For figure placement
+\usepackage{tcolorbox} % For boxed content
+
+% Page setup
+\geometry{margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{LFD110: Intro to RIVSV}}
+\fancyhead[R]{\textbf{\today}}
+\fancyfoot[C]{\thepage}
+
+% Section format
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\small\bfseries}{\thesubsubsection}{1em}{}
+
+% Custom environment for highlighted notes
+\newtcolorbox{notebox}[1][]{
+  colback=yellow!10,
+  colframe=yellow!60!black,
+  title=#1
+}
+
+% Document metadata
+\title{LFD110: Intro to RISCV}
+\author{Karl Solomon}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Intro}
+\section{Getting to Know RISCV}
+\begin{itemize}
+    \item RISC - Reduced Instruction Set Computer
+    \item ISA - Instruction Set Architecture. An abstract model of a computer.
+    \item MIPS - Microprocessor without Interlocked Pipeline Stages.
+\end{itemize}
+\subsection{Intro}
+\subsection{Exploring RISCV}
+RISCs first implemented in 1980s. RISC-V is 5th gen RISC. RISCV Exchange is a website detailing list of available RISCV implementations/resources.
+RISC-V came out of Berkeley Parallel Computing Lab.
+Tim Berners-Lee revolutionized major internet protocol standards (URL, HTML, HTTP, W3C).
+RISCV implements creative common license to allow the spec to remain open. SW/HW artifacts implement BSD/MIT licenses so that RISCV has permissive open usage.
+RISC-V Base Inteter ISA has 40 instructions.
+David Patterson (Berkeley) and John Hennessy (Stanford) received Turing award for RISCV in 2017.
+RISCV has promise due to commitment to completely open architecture/source/spec/standard.
+RISCV ASPIRE Lab (run by Krste Asanovic, successor to David Patterson's Par Lab) received DARPA funding, but did not restrict technology's dissimination.
+\subsection{RISCV International}
+Does not build HW, but rather helps HW/SW teams/companies to build RISCV systems themselves through a clear and simple ISA.
+\subsection{RISCV Community}
+\subsection{Summary}
+\section{Exploring RISCV ISA}
+R-type:
+J-type:
+
+\subsection{RISCV Spec}
+First volume spec defines unprivileged ISA extensions.
+Second volume spec defines privileged archeticture.
+\subsection{\href{https://drive.google.com/file/d/1s0lZxUZaa7eV_O0_WsZzaurFLLww7ou5/view}{Unpriv Spec}}
+\subsection{RISCV ISA}
+\subsection{\href{https://drive.google.com/file/d/1EMip5dZlnypTk7pt4WWUKmtjUKTOkBqh/view}{Priv Spec}}
+\subsection{Summary}
+\section{Hands-On RISCV Assembly}
+\subsection{RISCV Specific Assembly}
+\subsection{RISCV Simulation}
+\subsection{Ex 1: Terminal Interface}
+\subsection{Ex 2: String Length}
+\subsection{Ex 3: LED Matrix Display}
+\subsection{Ex 4: Embedded Application}
+\subsection{Summary}
+\section{RISCV Dev Tools}
+\subsection{SW Dev Tools}
+\subsection{HW Dev Tools}
+\subsection{SW}
+\subsection{HW}
+\subsection{Summary}
+\section{Meeting Demand of Today's Computing}
+\subsection{Modern Computing}
+\subsection{RISCV Future}
+\subsection{Summary}
+\section{Completion}
+
+\section{Useful References and Resources}
+\begin{itemize}
+    \item \href{https://example.com}{Resource Name}: Brief description.
+    \item \href{https://example.com}{Resource Name}: Brief description.
+\end{itemize}
+
+\section{Additional Notes}
+\begin{notebox}[Important Note]
+Include any additional notes, insights, or reminders here.
+\end{notebox}
+
+\end{document}

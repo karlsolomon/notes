@@ -1,0 +1,20 @@
+Vincent Engeness
+
+I came across your GPU engineering background with Nvidia. I'm working with a hiring manager on the AWS Neuron SDK team who is looking for a senior software engineer to help build the software stack/runtime execution for AWS Inferentia and Trainium machine learning accelerators. This is a custom-designed machine learning inference chip developed by Amazon for running deep learning models efficiently on Amazon EC2 instances. It is optimized for running popular deep learning frameworks like TensorFlow, PyTorch, and MXNet.
+
+Note: While certain teams on AWS Neuron require a deep knowledge of AI/ML training models, this particular position doesn't (it's nice to have). 
+
+I would love to share more about this unique opportunity. Is there a convenient time to chat this week?
+
+AWS Neuron:
+Runs EC2 instances
+EC2 - Elastic Cloud Compute
+Annapurna Labs
+
+Integrates with PyTorch & Jax
+
+**AWS Inferentia and Trainium machine learning accelerators**
+
+Prepare for concurrent algorithms questions
+Send Resume
+Talk w/ Hiring Manager - have list of questions prepared

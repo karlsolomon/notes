@@ -23,9 +23,9 @@
 \fancyfoot[C]{\thepage}
 
 % Section format
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\small\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\section}{\clearpage\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 % Custom environment for highlighted notes
 \newtcolorbox{notebox}[1][]{
@@ -42,8 +42,8 @@
 \begin{document}
 
 % Warnings to silence overfull/underfull boxes
-\vfuzz=1000pt
-\hfuzz=1000pt
+\vfuzz=10000pt
+\hfuzz=10000pt
 \tolerance=20000
 \vbadness=19999
 \hbadness=19999
@@ -53,7 +53,6 @@
 \tableofcontents
 \newpage
 
-\section{Intro}
 \section{Getting to Know RISCV}
     \begin{itemize}
       \item RISC - Reduced Instruction Set Computer
@@ -88,6 +87,7 @@
         Extensions:
         \begin{itemize}
           \item \textbf{I}: Integer, the only \textit{required} module. Contains all necessary basic operations.
+          \item \textbf{E}: Embedded, a version of I with fewer registers for embedded targets.
           \item \textbf{M}: Integer multiplication and division.
           \item \textbf{A}: Atomic instructions.
           \item \textbf{C}: Compressed instructions. This provides an alternative 16-bit encoded subset of RV32I instructions (which are normally 32 bit).
@@ -108,11 +108,80 @@
           \item \textbf{Zilsd}: Load/Store pair for RV32
         \end{itemize}
       \subsubsection{ISA Primer}
+        \begin{description}
+          \item[ISA]
+            Instruction Set Architecture. An abstract model of a computer. Implentations are things like CPU/GPU/XPU/TPU.
+        \end{description}
+        RISCV is maintained by a member organization which is free to join and has permissive open-source licenses. This prevents any one individual/organization from monopolizing the RISCV spec.
+        \paragraph {Development Model:}
+          \begin{enumerate}
+            \item Spec begins as a "Task Group" approved by the TSC (Technical Steering Committee).
+            \item After approval, begin public work on GitHub. Docs developed using AsciiDoc. Only members may contribute pull-requests, but anyone may submit issues.
+          \end{enumerate}
       \subsubsection{Extension Lifecycle}
+        \begin{itemize}
+          \item \textbf{Open} Extension is currently being developed.
+          \item \textbf{Frozen} Only "minor" updates are allowed. All main features are finalized.
+          \item \textbf{Ratified} Status when a "Frozen" extension passes public review and voting process.
+        \end{itemize}
+        \href{https://riscv.atlassian.net/wiki/spaces/TAXX/pages/174522378/RISC-V+Development+Process}{Full process details}.
+        \newline
+        \href{https://riscv.atlassian.net/wiki/spaces/TAXX/pages/174522378/RISC-V+Development+Process#Fast-Track-or-Technical-Committee%3F}{Fast Track details (for small extensions)}.
+        \newline
+        \begin{figure}[ht]
+          \centering
+          \includegraphics[width=\textwidth]{images/rv_review_process.png}
+          \caption{Extension Rafitication Process}
+        \end{figure}
       \subsubsection{Organizing the Spec}
+        Different extensions can be eigther unprivileged or privileged. RISCV only has 3 modes. User (U), Supervisor (S), Machine (M). There is also a Hyper mode (H) available.
+        \begin{figure}[ht]
+          \centering
+          \includegraphics[scale=0.2]{images/rv_rings.png}
+          \caption{x86 Processor Priv Levels}
+        \end{figure}
     \subsection{\href{https://drive.google.com/file/d/1s0lZxUZaa7eV_O0_WsZzaurFLLww7ou5/view}{Unpriv Spec}}
       \subsubsection{Inside the unpriv spec}
+        RV[Bits][Extensions...] is generic form. \newline
+        Base ISAs (all of which are extensions of RV32I):
+        \begin{itemize}
+          \item RV32I
+          \item RV32E
+          \item RV64I
+          \item RV128I
+        \end{itemize}
       \subsubsection{RV32I: Base Integer ISA}
+        Specifies 32 CPU registers, all 32b wide, plus the PC. R0 always reads 0. ABI (Application Binary Interface) specifies how each register is used.
+        \begin{itemize}
+          \item Add/Subtract
+          \item Bitwise logical operations
+          \item Load/Store
+          \item Jumps
+          \item Branches
+        \end{itemize}
+        \begin{table}[ht]
+          \centering
+          \begin{tabular}{|c|c|c|c|}
+            \hline
+            Register & ABI Name & Description                       & Saver  \\
+            \hline
+            R0       & zero     & Hard-wired 0                      & -      \\
+            R1       & ra       & Return address                    & Caller \\
+            R2       & sp       & Stack pointer                     & Callee \\
+            R3       & gp       & Global pointer                    & -      \\
+            R4       & tp       & Thread pointer                    & -      \\
+            R5       & t0       & Temporary/alternate link register & Caller \\
+            R6-7     & t1-2     & Temporaries                       & Caller \\
+            R8       & s0/fp    & Saved register/frame pointer      & Callee \\
+            R9       & s1       & Saved register                    & Callee \\
+            R10-11   & a0-1     & Function arguments/return values  & Caller \\
+            R12-17   & a2-7     & Function arguments                & Caller \\
+            R18-27   & s2-11    & Saved registers                   & Callee \\
+            R28-31   & t3-6     & Temporaries                       & Caller \\
+            \hline
+          \end{tabular}
+          \caption{RV32I ABI}
+        \end{table}
       \subsubsection{CSRs: Control and Status Registers}
       \subsubsection{Extensions}
       \subsubsection{M: multiplication and division}

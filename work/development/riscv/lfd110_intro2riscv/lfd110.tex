@@ -1,16 +1,18 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 % Packages for better formatting
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb} % Math symbols
+\usepackage{enumitem} % For organized lists
+\usepackage{fancyhdr} % Custom headers and footers
+\usepackage{float} % For figure placement
+\usepackage{geometry} % Adjust page dimensions
 \usepackage{graphicx} % For including images
 \usepackage{hyperref} % For hyperlinks
-\usepackage{geometry} % Adjust page dimensions
-\usepackage{fancyhdr} % Custom headers and footers
+\usepackage{silence} % filter out specific warnings
+\usepackage{tcolorbox} % For boxed content
 \usepackage{titlesec} % Custom section titles
 \usepackage{xcolor} % Color support for text highlighting
-\usepackage{enumitem} % For organized lists
-\usepackage{float} % For figure placement
-\usepackage{tcolorbox} % For boxed content
+
 
 % Page setup
 \geometry{margin=1in}
@@ -39,71 +41,162 @@
 
 \begin{document}
 
+% Warnings to silence overfull/underfull boxes
+\vfuzz=1000pt
+\hfuzz=1000pt
+\tolerance=20000
+\vbadness=19999
+\hbadness=19999
+
+
 \maketitle
 \tableofcontents
 \newpage
 
 \section{Intro}
 \section{Getting to Know RISCV}
-\begin{itemize}
-    \item RISC - Reduced Instruction Set Computer
-    \item ISA - Instruction Set Architecture. An abstract model of a computer.
-    \item MIPS - Microprocessor without Interlocked Pipeline Stages.
-\end{itemize}
-\subsection{Intro}
-\subsection{Exploring RISCV}
-RISCs first implemented in 1980s. RISC-V is 5th gen RISC. RISCV Exchange is a website detailing list of available RISCV implementations/resources.
-RISC-V came out of Berkeley Parallel Computing Lab.
-Tim Berners-Lee revolutionized major internet protocol standards (URL, HTML, HTTP, W3C).
-RISCV implements creative common license to allow the spec to remain open. SW/HW artifacts implement BSD/MIT licenses so that RISCV has permissive open usage.
-RISC-V Base Inteter ISA has 40 instructions.
-David Patterson (Berkeley) and John Hennessy (Stanford) received Turing award for RISCV in 2017.
-RISCV has promise due to commitment to completely open architecture/source/spec/standard.
-RISCV ASPIRE Lab (run by Krste Asanovic, successor to David Patterson's Par Lab) received DARPA funding, but did not restrict technology's dissimination.
-\subsection{RISCV International}
-Does not build HW, but rather helps HW/SW teams/companies to build RISCV systems themselves through a clear and simple ISA.
-\subsection{RISCV Community}
-\subsection{Summary}
+    \begin{itemize}
+      \item RISC - Reduced Instruction Set Computer
+      \item ISA - Instruction Set Architecture. An abstract model of a computer.
+      \item MIPS - Microprocessor without Interlocked Pipeline Stages.
+    \end{itemize}
+    \subsection{Intro}
+    \subsection{Exploring RISCV}
+      RISCs first implemented in 1980s. RISC-V is 5th gen RISC. RISCV Exchange is a website detailing list of available RISCV implementations/resources.
+      RISC-V came out of Berkeley Parallel Computing Lab.
+      Tim Berners-Lee revolutionized major internet protocol standards (URL, HTML, HTTP, W3C).
+      RISCV implements creative common license to allow the spec to remain open. SW/HW artifacts implement BSD/MIT licenses so that RISCV has permissive open usage.
+      RISC-V Base Inteter ISA has 40 instructions.
+      David Patterson (Berkeley) and John Hennessy (Stanford) received Turing award for RISCV in 2017.
+      RISCV has promise due to commitment to completely open architecture/source/spec/standard.
+      RISCV ASPIRE Lab (run by Krste Asanovic, successor to David Patterson's Par Lab) received DARPA funding, but did not restrict technology's dissimination.
+    \subsection{RISCV International}
+      Does not build HW, but rather helps HW/SW teams/companies to build RISCV systems themselves through a clear and simple ISA.
+    \subsection{RISCV Community}
+    \subsection{Summary}
 \section{Exploring RISCV ISA}
-R-type:
-J-type:
+    R-type:
+    J-type:
 
-\subsection{RISCV Spec}
-First volume spec defines unprivileged ISA extensions.
-Second volume spec defines privileged archeticture.
-\subsection{\href{https://drive.google.com/file/d/1s0lZxUZaa7eV_O0_WsZzaurFLLww7ou5/view}{Unpriv Spec}}
-\subsection{RISCV ISA}
-\subsection{\href{https://drive.google.com/file/d/1EMip5dZlnypTk7pt4WWUKmtjUKTOkBqh/view}{Priv Spec}}
-\subsection{Summary}
+    \subsection{RISCV Spec}
+      First volume spec defines unprivileged ISA extensions. Second volume spec defines privileged archeticture.
+      \subsubsection{Modular ISA}
+        A green card (reference manual) of the extensions can be found \href{http://riscvbook.com/greencard-20181213.pdf}{here}.
+        \newline
+        The basic ethos of riscv is that it is a "modular" ISA. There is a mandatory base ISA and multiple optional extensions. This differs from ARM in that ARM cortex M4 ISA conains all of the instruction in M3, which the M3 contain all the M0+ instructions. There is no way to opt-out of the M3-specific instructions and just contain, say, M4 and M0+.
+        \newline
+        Extensions:
+        \begin{itemize}
+          \item \textbf{I}: Integer, the only \textit{required} module. Contains all necessary basic operations.
+          \item \textbf{M}: Integer multiplication and division.
+          \item \textbf{A}: Atomic instructions.
+          \item \textbf{C}: Compressed instructions. This provides an alternative 16-bit encoded subset of RV32I instructions (which are normally 32 bit).
+          \item \textbf{F}: Single-precision floating point instructions.
+          \item \textbf{D}: Double-precision floating point instructions.
+          \item \textbf{Q}: Quad-precision floating point instructions.
+          \item \textbf{G}: "General" shorthand for IMAFD, a very popular combination of modules.
+          \item \textbf{Zfh}: Half-precision floating point instructions.
+          \item \textbf{BF16}: BFloat16-precision
+          \item \textbf{Zfa}: Additional floating point instructions which are not covered by other modules.
+          \item \textbf{Zfinx}: Floating point instructions which occur in integer registers.
+          \item \textbf{C}: compressed instructions.
+          \item \textbf{Zc}: code size reduction.
+          \item \textbf{B}: Bit manipulation.
+          \item \textbf{V}: Vector operations.
+          \item \textbf{Crypto}: Cryptographic instructions
+          \item \textbf{CFI}: Control flow integrity.
+          \item \textbf{Zilsd}: Load/Store pair for RV32
+        \end{itemize}
+      \subsubsection{ISA Primer}
+      \subsubsection{Extension Lifecycle}
+      \subsubsection{Organizing the Spec}
+    \subsection{\href{https://drive.google.com/file/d/1s0lZxUZaa7eV_O0_WsZzaurFLLww7ou5/view}{Unpriv Spec}}
+      \subsubsection{Inside the unpriv spec}
+      \subsubsection{RV32I: Base Integer ISA}
+      \subsubsection{CSRs: Control and Status Registers}
+      \subsubsection{Extensions}
+      \subsubsection{M: multiplication and division}
+      \subsubsection{F and D: floating point and double precision}
+      \subsubsection{C: Compressed Instructions}
+      \subsubsection{More Extensions}
+      \subsubsection{Unsupported Instructions}
+    \subsection{RISCV ISA}
+      \subsubsection{Instruction Encoding}
+      \subsubsection{Immediates and Addresses}
+      \subsubsection{Instructions in Assembly}
+      \subsubsection{Reference Documents}
+      \subsubsection{Using the Green Card}
+      \subsubsection{Irregular design decisions}
+    \subsection{\href{https://drive.google.com/file/d/1EMip5dZlnypTk7pt4WWUKmtjUKTOkBqh/view}{Priv Spec}}
+      \subsubsection{Intro to unpriv spec}
+      \subsubsection{M-Mode (Machine-level)}
+      \subsubsection{S-Mode (Supervisor-level)}
+    \subsection{Chapter Summary}
 \section{Hands-On RISCV Assembly}
-\subsection{RISCV Specific Assembly}
-\subsection{RISCV Simulation}
-\subsection{Ex 1: Terminal Interface}
-\subsection{Ex 2: String Length}
-\subsection{Ex 3: LED Matrix Display}
-\subsection{Ex 4: Embedded Application}
-\subsection{Summary}
+    \subsection{RISCV Specific Assembly}
+      \subsubsection{Assembly Language}
+      \subsubsection{Features}
+      \subsubsection{How RISCV Asm works}
+      \subsubsection{Assembler Directives}
+      \subsubsection{Reminder: ISA}
+      \subsubsection{Assembly Instruction Set}
+      \subsubsection{PseudoInstructions}
+      \subsubsection{CSR Access}
+      \subsubsection{Order of Operands}
+      \subsubsection{Labels}
+      \subsubsection{Immediate Sizes}
+    \subsection{RISCV Simulation}
+      \subsubsection{RISCV Simulators}
+      \subsubsection{Github Repository}
+      \subsubsection{Installing Venus on VSCode}
+      \subsubsection{Environment Calls}
+      \subsubsection{VS Code Extension Environment Calls}
+      \subsubsection{Terminal Input}
+    \subsection{Ex 1: Terminal Interface}
+    \subsection{Ex 2: String Length}
+    \subsection{Ex 3: LED Matrix Display}
+    \subsection{Ex 4: Embedded Application}
+    \subsection{Summary}
 \section{RISCV Dev Tools}
-\subsection{SW Dev Tools}
-\subsection{HW Dev Tools}
-\subsection{SW}
-\subsection{HW}
-\subsection{Summary}
+    \subsection{SW Dev Tools}
+      \subsubsection{ABIs}
+      \subsubsection{Compiler Toolchains}
+      \subsubsection{Simulators/Emulators}
+      \subsubsection{IDEs}
+    \subsection{HW Dev Tools}
+      \subsubsection{ASIC/FPGA}
+      \subsubsection{ASIC Resources}
+      \subsubsection{FPGA Resources}
+      \subsubsection{IP Design and Verification Tools}
+    \subsection{SW}
+      \subsubsection{Apps}
+      \subsubsection{OSes}
+      \subsubsection{User OSes}
+      \subsubsection{RTOSes}
+    \subsection{HW}
+      \subsubsection{Implementations}
+      \subsubsection{Dev Boards}
+    \subsection{Summary}
 \section{Meeting Demand of Today's Computing}
-\subsection{Modern Computing}
-\subsection{RISCV Future}
-\subsection{Summary}
+    \subsection{Modern Computing}
+      \subsubsection{Compute Demand}
+      \subsubsection{Personal Computing}
+      \subsubsection{Embedded Systems}
+      \subsubsection{AI/ML}
+      \subsubsection{HPC}
+    \subsection{RISCV Future}
+      \subsubsection{Lindy Effect}
+    \subsection{Summary}
 \section{Completion}
 
 \section{Useful References and Resources}
-\begin{itemize}
-    \item \href{https://example.com}{Resource Name}: Brief description.
-    \item \href{https://example.com}{Resource Name}: Brief description.
-\end{itemize}
+    \begin{itemize}
+      \item \href{https://example.com}{Resource Name}: Brief description.
+    \end{itemize}
 
 \section{Additional Notes}
-\begin{notebox}[Important Note]
-Include any additional notes, insights, or reminders here.
-\end{notebox}
+    \begin{notebox}[Important Note]
+      Include any additional notes, insights, or reminders here.
+    \end{notebox}
 
 \end{document}

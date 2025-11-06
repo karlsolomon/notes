@@ -1,0 +1,6 @@
+simd on riscv using vector 
+
+https://releases.riscstar.com/events/devday25/porting_to_riscv_vector.pdf
+riscstar.com/devday25/slides
+
+pretty much lost, lol. Need to work through the slides again. Model answers exist in the codepack

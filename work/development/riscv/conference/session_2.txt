@@ -1,0 +1,19 @@
+speaker is leader in voice MEMS RISCV chip @ UpbeatTech
+
+specializes in "far-edge" ai devices.
+
+UP201 (ultra low power MCU). - Trina-Pi Eval board
+    sifive e34 + aon e21 dual core
+    Two npu
+    has root-of-trust hw security
+
+    has switches to power down individual peripherals
+    active power mode: 0.72 V, 19.8uW/Mhz/DMIPS
+    sleep power mode: 0.7V, 16.8 uW/Mhz/DMIPS
+    hibernation power mode: 0.6V, 29uW
+
+    could use the voice model to be like "ultralight gps record"
+
+    email upbeat tech for reference manual
+
+    look up zadig equivalent on linux

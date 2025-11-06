@@ -1,0 +1,5 @@
+Mastering Embedded Linux Devlopment author, but that's all about Arm. (Yocto)
+
+
+
+https://github.com/fvasquez/building-riscv-yocto/releases/tag/v1.2

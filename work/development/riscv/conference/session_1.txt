@@ -1,0 +1,11 @@
+Speakers:
+Yuning Liang, CEO DeepComputing
+Matt St. Onge, Asociate Principal Solutions Architect
+
+look into koji (build renderer - rpm) for redhat
+
+Basically a framework sales pitch, lol.
+Then mucking around w/ ollama on deepcompute/coolermaster NPU boards.
+
+
+

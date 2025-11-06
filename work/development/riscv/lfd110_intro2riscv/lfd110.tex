@@ -8,6 +8,7 @@
 \usepackage{geometry} % Adjust page dimensions
 \usepackage{graphicx} % For including images
 \usepackage{hyperref} % For hyperlinks
+\usepackage{listings} % code block style
 \usepackage{silence} % filter out specific warnings
 \usepackage{tcolorbox} % For boxed content
 \usepackage{titlesec} % Custom section titles
@@ -34,6 +35,22 @@
   title=#1
 }
 
+% RISCV language definition
+\lstdefinelanguage{RISCV}{
+  keywords=[1]{addi, lw, sw, add, sub, mul, div, beq, bne, jal, jalr, ecall, li, la, mv, ret, fence, lui, call, auipc, lb},
+  keywords=[2]{file,globl,local,comm,common,ident,section,size,text,data,rodata,bss,string,asciz,equ,macro,endm,type,option,byte,2byte,half,short,4byte,word,long,8byte,dword,quad,float,double,quad,dtprelword,dtpreldword,sleb128,uleb128,p2align,balign,zero,variant,attribute,align},
+  comment=[l]{\#},
+  morestring=[b]",
+  basicstyle=\ttfamily\small,
+  keywordstyle=[1]\color{blue}\bfseries,
+  keywordstyle=[2]\color{orange}\bfseries,
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  identifierstyle=\color{black},
+  showstringspaces=false
+}
+
+
 % Document metadata
 \title{LFD110: Intro to RISCV}
 \author{Karl Solomon}
@@ -48,6 +65,9 @@
 \vbadness=19999
 \hbadness=19999
 
+% List format spacing
+\setlist[itemize]{nosep}
+\setlist[enumerate]{nosep}
 
 \maketitle
 \tableofcontents
@@ -89,6 +109,7 @@
           \item \textbf{I}: Integer, the only \textit{required} module. Contains all necessary basic operations.
           \item \textbf{E}: Embedded, a version of I with fewer registers for embedded targets.
           \item \textbf{M}: Integer multiplication and division.
+          \item \textbf{P}: Packed-SIMD instructions.
           \item \textbf{A}: Atomic instructions.
           \item \textbf{C}: Compressed instructions. This provides an alternative 16-bit encoded subset of RV32I instructions (which are normally 32 bit).
           \item \textbf{F}: Single-precision floating point instructions.
@@ -99,7 +120,11 @@
           \item \textbf{BF16}: BFloat16-precision
           \item \textbf{Zfa}: Additional floating point instructions which are not covered by other modules.
           \item \textbf{Zfinx}: Floating point instructions which occur in integer registers.
+          \item \textbf{Zficsr}: Manipulating CSRs.
+          \item \textbf{Zifencei}: Instruction-memory synchronization.
           \item \textbf{C}: compressed instructions.
+          \item \textbf{H}: hypervisor instructions.
+          \item \textbf{L}: decimal floating-point operations.
           \item \textbf{Zc}: code size reduction.
           \item \textbf{B}: Bit manipulation.
           \item \textbf{V}: Vector operations.
@@ -141,7 +166,7 @@
           \caption{x86 Processor Priv Levels}
         \end{figure}
     \subsection{\href{https://drive.google.com/file/d/1s0lZxUZaa7eV_O0_WsZzaurFLLww7ou5/view}{Unpriv Spec}}
-      \subsubsection{Inside the unpriv spec}
+      \subsubsection{Unpriv Spec}
         RV[Bits][Extensions...] is generic form. \newline
         Base ISAs (all of which are extensions of RV32I):
         \begin{itemize}
@@ -183,37 +208,162 @@
           \caption{RV32I ABI}
         \end{table}
       \subsubsection{CSRs: Control and Status Registers}
+        Separate bank of registers w/ 12b address space (thus 4096 max). Contains things like timers, counters, flags, mfg. info, etc. They are the primary mechanism by which software controls hardware. This is crucial for RISCV programmers. \textbf{Zicsr} extension contains many of the CSR manipulation instructions: CSRRW, CSRRS, CSRRC, etc. The most important CSRs:
+        \begin{itemize}
+          \item \textbf{mstatus}: Machine Status Register. Controls operating priv level, ISR\_Enable/Disable flags and other processor control flags.
+          \item \textbf{mepc}: Machine Exception Program Counter. Stores PC of instruction that caused an exception (or an interrupt in machine mode).
+          \item \textbf{mtvec}: Machine Trap-Vector Base Address.
+          \item \textbf{mcause}: Machine Cause Register. Reason for most recent interrrupt/exception. Distinguishes interrupts from exceptions.
+          \item \textbf{misa}: Machine ISA Register. Specifies which ISAs are supported and what the base ISA is.
+        \end{itemize}
       \subsubsection{Extensions}
+        Each extension is maintained by a \textit{Task Group} (e.g. Crypto, BExtension, VExtension).
       \subsubsection{M: multiplication and division}
+        Common for low-power/small processors to omit M since multiplication can be performed in software using shifts/adds.
       \subsubsection{F and D: floating point and double precision}
+        1b: sign, 0 is positive, 1 is negative \newline
+        8b: exponent, 0 is 2e-126, every bit in adds to exponent. Min is -127, max is 127.\newline
+        23b: mantissa (fraction), begins as 0, MSb is 0.5, then 0.25, 0.125, etc. where you add the fractions together. Min is 0, Max is very close to 1.\newline
+        \begin{equation}
+          val = sign * mantissa * 2^{exponent - 126}
+        \end{equation}
+        \begin{figure}[ht]
+          \centering
+          \includegraphics[width=\textwidth]{images/ieee754.png}
+          \caption{FP32: single-precision floating point representation.}
+        \end{figure}
       \subsubsection{C: Compressed Instructions}
-      \subsubsection{More Extensions}
+        Alternative 16b encoding for instructions. Takes the 34 most popular instructions and encodes them in 16b. With this addition approx. 50\% of instructions can be compressed, leading to 25-30\% reduction in code size.
       \subsubsection{Unsupported Instructions}
+        RISCV implementations can still execute instructions which are not in its ISA. When this happens an exception is thrown and the software running on the implementation must emulate the instruction in software.
     \subsection{RISCV ISA}
       \subsubsection{Instruction Encoding}
+        \begin{itemize}
+          \item 1x 32b PC
+          \item 32x 32b Registers (R0-R31)
+          \item 40x Unique 32b unpriv instructions in 6 formats:
+            \begin{itemize}
+              \item R: Register. 2 source registers and 1 dest register.
+              \item I: Immediate. Anything involving an immediate value.
+              \item S: Store. Subset of I-Type. Store to memory. Involves source register, immediate offset, and base addr register specifying the memory location.
+              \item B: Branch. Conditionals, compares two registers.
+              \item U: Upper Immediate. Sets only the upper bits of a register to a constant.
+              \item J: Jump. Unconditional jumps.
+            \end{itemize}
+        \end{itemize}
+        \begin{figure}[ht]
+          \centering
+          \includegraphics[width=\textwidth]{images/rv_encoding.png}
+          \caption{Unpriv Encoding Format}
+        \end{figure}
       \subsubsection{Immediates and Addresses}
+        Any instruction other than R-type may contain an immediate. All immediates decode to 32b values, but encoding varies by instruction.
       \subsubsection{Instructions in Assembly}
       \subsubsection{Reference Documents}
-      \subsubsection{Using the Green Card}
+        \begin{itemize}
+          \item \href{https://github.com/jameslzhu/riscv-card/releases/download/latest/riscv-card.pdf}{RV32I Reference Card}
+          \item \href{http://riscvbook.com/greencard-20181213.pdf}{Green Card}
+        \end{itemize}
+      \subsubsection{Green Card Example Problems}
+        \begin{table}[ht]
+          \begin{tabular}{ll}
+            Which bitwise logical operations are available? & XOR,OR,AND                                 \\
+            Which conditional branches are available?       & beq, bne, blt, bge, bltu, bgeu             \\
+            Which instructions use immediate values?        & everything except R-type, fence, \& ecalls \\
+            Are there any traditional instructions missing? & not,ble,loadi,nop,jump,subi,mov,cpy:
+          \end{tabular}
+        \end{table}
       \subsubsection{Irregular design decisions}
+        \begin{itemize}
+          \item No Flag or Condition Register
+          \item R0 is hard-wired to 0
+          \item No way to specify a 32b immediate in a single instruction
+          \item No dedicated mul/div in the base ISA (RV32I)
+          \item Many missing basic instr. These are all special-cases of existing instr. e.g.
+            \begin{itemize}
+              \item jmp is just jal w/ write to R0
+              \item nop is the same as addi R0,R0,0
+              \item not is just xori with -1 immediate (all 1's)
+              \item mov is just add r1,r2,0
+            \end{itemize}
+          \item No SP by default, this is defined by the ABI.
+          \item No push/pop to stack. This is achieved by a combination of load/store/add/sub instr.
+          \item No subroutine "call" and "return" instructions. These are available as pseudoinstr of jal.
+        \end{itemize}
     \subsection{\href{https://drive.google.com/file/d/1EMip5dZlnypTk7pt4WWUKmtjUKTOkBqh/view}{Priv Spec}}
-      \subsubsection{Intro to unpriv spec}
+      \subsubsection{Priv Spec}
+        Originally designed to support virtualized systems as shown below.
+        \begin{figure}[ht]
+          \centering
+          \includegraphics[width=\textwidth]{images/rv_priv_system_arch.png}
+          \caption{Virtualization System Architecture}
+        \end{figure}
       \subsubsection{M-Mode (Machine-level)}
+        lowest-level mode, first mode entered after boot. Can be used for expensive/difficult features e.g. watchdog timer.
+        \begin{itemize}
+          \item \textbf{NMI} Non-Maskable Interrupt. Each has a "mcause" register associated. Do not reset HW state, so can provide more context for debugging.
+          \item \textbf{PMA} Physical Memory Attributes. Rules that define the addressability and chmod/rwe permissions of different memory regions.
+          \item \textbf{PMP} Physical Memory Protection. Not a fully no-trust envorintment, but can be used to create one. Limits physical address space accessible to a hardware thread (hart).
+        \end{itemize}
+
       \subsubsection{S-Mode (Supervisor-level)}
-    \subsection{Chapter Summary}
+        Hardware restriced. Really only has access to timers and inter-processor interrupts. Defined by the SBI (Supervisor Binary Interface). Uses things like SFENCE.VMA to synchronize updates to memory-contained data structures so subsequent reads are coherent. Supports any of 32b, 39b, and 48b VM addressing.
 \section{Hands-On RISCV Assembly}
     \subsection{RISCV Specific Assembly}
-      \subsubsection{Assembly Language}
-      \subsubsection{Features}
       \subsubsection{How RISCV Asm works}
+        \begin{itemize}
+          \item \textbf{Instructions}
+          \item \textbf{Registers}
+          \item \textbf{Labels} Symbols that can be branched/jumped to.
+          \item \textbf{\href{https://github.com/riscv-non-isa/riscv-asm-manual/blob/lpad_hash/riscv-asm.md}{Directives}} Controls the behavior of the assembler (setting memory regions or defining constants).
+          \item \textbf{Macros} sequences of instructions that can be run w/ a single macro call (like subroutines?).
+          \item \textbf{\href{https://github.com/riscv-non-isa/riscv-asm-manual/blob/main/src/asm-manual.adoc}{PseudoInstructions}} Instructions that are translated by the assembler into multiple instructions. Allows for more readable code.
+        \end{itemize}
+      \subsubsection{Syntax}
+        \lstinputlisting[language=RISCV, caption={Hello World}]{./sources/helloWorld.s}
       \subsubsection{Assembler Directives}
-      \subsubsection{Reminder: ISA}
-      \subsubsection{Assembly Instruction Set}
-      \subsubsection{PseudoInstructions}
+        non-CPU instructions that provide info to the assembler to guide the assembly process.
+      \subsubsection{Reminder: Assembly Instruction Set}
+        \begin{lstlisting}[language=RISCV]
+add   rd, rs1, rs2
+auipc rd, imm         # adds 20b immediate (lshifted 12b) to the PC.
+jal   rd, offset      # Writes PC+4 to rd and jumps to pc+sext(offset)
+jalr  rd, offset(rs1) # Writes PC+4 to rd and jumps to rs1+offset
+lw    rd, offset(rs1) # Loads 4B from from rs1+offset into rd
+lb    rd, offset(rs1) # Loads 1B from from rs1+offset into rd
+lui   rd, imm         # leftshift imm 12 then add to rd.
+addi  rd, rs, imm     # rs+imm = rd
+sw    rs2, offset(rs1) # Stores rs2 to rs1+offset (word)
+sb    rs2, offset(rs1) # Stores rs2 to rs1+offset (byte)
+        \end{lstlisting}
+      \subsubsection{Reminder: PseudoInstructions}
+        Most of the pseudoinstructions are just special cases of existing instructions using x0 (0) or x1 (retAddr).
+        \begin{lstlisting}[language=RISCV]
+nop               # addi, x0, x0, 0
+beqz  rs, offset  # beq   rs, x0, offset
+j     offset      # jal   x0, offset
+jal   offset      # jal   x1, offset
+jr    rs          # jalr  x0, 0 (rs)
+ret               # jal   x0, 0(x1)
+lla   rd, symbol  # auipc rd, symbol[32-12]; addi rd, rd, symbol
+li    rd, imm     # lui   rd, imm[32-12]; addi rd, rd, imm
+mv    rd, rs      # addi  rd, rs, 0
+not   rd, rs      # xori  rd, rs, -1
+bgt   rs, rt, off # blt   rt, rs, off (offset)
+call  offset      # auipc x1, offset[32-12]; jal x1, offset[11:0](x1)
+      \end{lstlisting}
       \subsubsection{CSR Access}
+        \begin{itemize}
+          \item CSRRW: read/write
+          \item CSRRS: read/set
+          \item CSRRC: read/clear
+        \end{itemize}
       \subsubsection{Order of Operands}
+        opcode, dest, source1, source2
       \subsubsection{Labels}
+        can be used in place of memory address for jumps. Define ROM/data elements.
       \subsubsection{Immediate Sizes}
+        size of the immediate depends on the ISA bitwidth/address space.
     \subsection{RISCV Simulation}
       \subsubsection{RISCV Simulators}
       \subsubsection{Github Repository}
@@ -267,5 +417,11 @@
     \begin{notebox}[Important Note]
       Include any additional notes, insights, or reminders here.
     \end{notebox}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=\textwidth]{./images/ieee754.png}
+      \caption{caption}
+    \end{figure}
 
 \end{document}

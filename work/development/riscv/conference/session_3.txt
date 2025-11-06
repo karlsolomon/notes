@@ -1,0 +1,22 @@
+Martin Maas mmass@google.com, Research Scientist, Google
+
+Supercharging RISCV software porting w/ AI
+
+Part 1: Basically a talk on this paper @ https://arxiv.org/abs/2501.14928
+
+performance optimization papers
+arxiv:2503.15669
+arxiv:2302.07867
+
+Part 2: 
+
+Can use agents w/ gemini cli to automate workflows (building, running, etc.)
+
+ported github.com/google/cityhash to RISCV w/ agents
+
+Basically a big agentic gemini-cli sales pitch. Shows how to use gemini-cli to port from one ISA to another. 
+
+Good technique is to
+    - have one agent fact-check a previous agent
+    - have a pipeline/method for reverting changes
+    - can use llm to generate its own prompt

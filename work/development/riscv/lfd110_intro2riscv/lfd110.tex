@@ -369,13 +369,43 @@ call  offset      # auipc x1, offset[32-12]; jal x1, offset[11:0](x1)
       \subsubsection{Github Repository}
       \subsubsection{Installing Venus on VSCode}
       \subsubsection{Environment Calls}
+        These can be used to interface with the simulator. Examples for Venus:
+        \begin{itemize}
+          \item ecall 1 to print \textbf{a1} in terminal as decimal integer
+          \item ecall 4 to print a string that starts where \textbf{a1} is pointing
+          \item ecall 11 to print \textbf{a1} as ASCII character
+          \item ecall 10 to end program
+        \end{itemize}
+        Example in Assembly:
+        \begin{lstlisting}[language=RISCV]
+        addi a0, x0, 1    # print_int ecall
+        addi a1, x0, 42   # integer 42
+        ecall
+        \end{lstlisting}
       \subsubsection{VS Code Extension Environment Calls}
       \subsubsection{Terminal Input}
-    \subsection{Ex 1: Terminal Interface}
-    \subsection{Ex 2: String Length}
-    \subsection{Ex 3: LED Matrix Display}
-    \subsection{Ex 4: Embedded Application}
+        VSCode Extension allows for console input to Venus simulator (not implemented by Venus implicitly): Use "Enter" to send input. Buffered internally and can be read one by one w/ 0x131. Basically a 1-byte (ring) buffer
+        \begin{itemize}
+          \item 0x130: enable input
+          \item 0x131: read input
+        \end{itemize}
+    \subsection{Examples}
+      Code for the following 4 examples can be found \href{https://github.com/lftraining/LFD110x/tree/main/src}{here}.
+      \begin{enumerate}
+        \item Terminal Interface
+        \item String Len
+        \item LED Matrix Display
+        \item Embedded Application
+      \end{enumerate}
     \subsection{Summary}
+      \begin{itemize}
+        \item RISCV assembly language syntax/features
+        \item Elements of program: directives, labels, mnemonics, operands
+        \item pseudoinstructions
+        \item CSRs
+        \item immediate values
+        \item examples w/ ecalls
+      \end{itemize}
 \section{RISCV Dev Tools}
     \subsection{SW Dev Tools}
       \subsubsection{ABIs}

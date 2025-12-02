@@ -1,0 +1,186 @@
+% --------------------------------------------------------------
+%  BEAMER TEMPLATE – PowerPoint‑style presentation
+% --------------------------------------------------------------
+%  To compile:
+%      pdflatex presentation.tex
+%  You may need to run it twice for the table of contents / references.
+% --------------------------------------------------------------
+
+\documentclass[10pt]{beamer}
+
+% --------------------------------------------------------------
+%  Theme & colour scheme
+% --------------------------------------------------------------
+% Choose any built‑in theme you like: Warsaw, Madrid, Berlin, ...
+%   – The theme defines the overall layout.
+%   – The colour theme defines the palette.
+% Feel free to replace both with your favourite.
+\usetheme{Madrid}          % <-- try Warsaw, Berlin, Copenhagen, etc.
+\usecolortheme{dolphin}    % <-- try beaver, crane, seahorse, etc.
+
+% --------------------------------------------------------------
+%  Packages
+% --------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}      % for including figures
+\usepackage{booktabs}      % nicer tables
+\usepackage{hyperref}      % clickable links in PDF
+\usepackage{amsmath,amssymb} % math symbols
+
+% --------------------------------------------------------------
+%  Title / author / date
+% --------------------------------------------------------------
+\title[Short Title]{\Huge Your Full Presentation Title}
+\subtitle{Optional subtitle}
+\author[Your Name]{\large Your Name\\[2mm]
+\small\texttt{your.email@domain.com}}
+\institute[Your Institute]{Your Institute or Company}
+\date{\today} % or a fixed date: 2 December 2025
+
+% --------------------------------------------------------------
+%  Logo (optional)
+% --------------------------------------------------------------
+% Uncomment the next two lines and replace the file name with your logo.
+% \logo{\includegraphics[height=1cm]{logo.png}}
+
+% --------------------------------------------------------------
+%  Begin document
+% --------------------------------------------------------------
+\begin{document}
+
+% --------------------------------------------------------------
+%  Title page
+% --------------------------------------------------------------
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% --------------------------------------------------------------
+%  Outline (Table of contents)
+% --------------------------------------------------------------
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+% --------------------------------------------------------------
+%  SECTION 1
+% --------------------------------------------------------------
+\section{Introduction}
+
+\begin{frame}{Motivation}
+    \begin{itemize}
+        \item Why this topic matters
+        \item Key challenges / open questions
+        \item Brief overview of your contribution
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+    \begin{block}{Goal}
+        Clearly state the problem you are addressing.
+    \end{block}
+    \pause
+    \begin{alertblock}{Assumptions}
+        List any simplifying assumptions.
+    \end{alertblock}
+\end{frame}
+
+% --------------------------------------------------------------
+%  SECTION 2 – Methodology / Theory
+% --------------------------------------------------------------
+\section{Methodology}
+
+\begin{frame}{Method Overview}
+    \begin{enumerate}
+        \item Step 1 – description
+        \item Step 2 – description
+        \item Step 3 – description
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Mathematical Model}
+    \[
+        \underbrace{y = f(x;\theta)}_{\text{model}} + \underbrace{\varepsilon}_{\text{noise}}
+    \]
+    \begin{itemize}
+        \item $x$: input vector
+        \item $\theta$: parameters to be estimated
+        \item $\varepsilon$: zero‑mean Gaussian noise
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------------------
+%  SECTION 3 – Results
+% --------------------------------------------------------------
+\section{Results}
+
+\begin{frame}{Experimental Setup}
+    \begin{itemize}
+        \item Dataset: \texttt{XYZ}
+        \item Hardware: 2×Inteli7, 16GB RAM
+        \item Evaluation metrics: Accuracy, F1‑score, etc.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Quantitative Results}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            Method & Accuracy (\%) & Precision & Recall \\
+            \midrule
+            Baseline   & 78.5 & 0.81 & 0.79 \\
+            Proposed   & \textbf{85.2} & \textbf{0.87} & \textbf{0.84} \\
+            \bottomrule
+        \end{tabular}
+        \caption{Performance comparison on the test set}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Qualitative Results}
+    \centering
+    %\includegraphics[width=0.85\linewidth]{example-figure.png}
+    \captionof{figure}{Sample output of the proposed method (replace with your own figure).}
+\end{frame}
+
+% --------------------------------------------------------------
+%  SECTION 4 – Discussion / Conclusions
+% --------------------------------------------------------------
+\section{Discussion \& Conclusions}
+
+\begin{frame}{Key Take‑aways}
+    \begin{itemize}
+        \item Summarise the main contribution in one sentence.
+        \item Highlight the most impressive quantitative gain.
+        \item Mention any surprising qualitative observations.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Future Work}
+    \begin{enumerate}
+        \item Extend to larger datasets / real‑world deployment.
+        \item Investigate alternative model architectures.
+        \item Explore theoretical guarantees.
+    \end{enumerate}
+\end{frame}
+
+% --------------------------------------------------------------
+%  THANK‑YOU / QUESTIONS
+% --------------------------------------------------------------
+\begin{frame}{Thank you!}
+    \centering
+    \large Questions?
+    \vspace{1cm}
+    
+    \begin{itemize}
+        \item \texttt{your.email@domain.com}
+        \item \url{https://github.com/your‑repo}
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------------------
+%  END OF DOCUMENT
+% --------------------------------------------------------------
+\end{document}

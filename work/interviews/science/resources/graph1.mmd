@@ -1,0 +1,60 @@
+flowchart TD
+    %% ==================== INPUT ====================
+    subgraph INPUT [Input Subsystem]
+        direction TB
+        Sensors[Camera / Light / SDC Sensors] --> MCU
+        Antenna_RX[RX Antenna (5GHz)] --> RF_RX
+        Antenna_TX[TX Antenna (5GHz)] --> RF_TX
+        ButtonBoard[CCU Button Board] --> MCU
+        SPI_Ring[SPI Ring Buffer] --> MCU
+    end
+
+    %% ==================== RF FRONT END ====================
+    subgraph RF_FRONT [RF Front‑End & Monitoring]
+        direction TB
+        RF_RX[Receiver] -->|conditioned RF| MCU
+        RF_TX[Transmitter] -->|encoded data| Antenna_TX
+        VSWR[VSWR Monitor] --> MCU
+    end
+
+    %% ==================== PROCESSING ====================
+    subgraph PROCESSING [Processing Subsystem]
+        direction TB
+        MCU[STM32F407 MCU] --> FreeRTOS
+        MCU --> Bootloader
+        MCU --> MainApp
+        FreeRTOS[FreeRTOS Scheduler]
+        Bootloader[Bootloader (FW update)]
+        MainApp[Main Application]
+        MainApp --> Drivers[Hardware Drivers]
+        Drivers --> UART_Drv[UART driver]
+        Drivers --> USB_Drv[USB driver]
+        Drivers --> LED_Drv[LED driver]
+        Drivers --> Timer[Timer / Clock mgmt]
+        Drivers --> Common[Common modules]
+    end
+
+    %% ==================== MEMORY ====================
+    subgraph MEMORY [Memory & Storage]
+        direction TB
+        EEPROM[EEPROM (settings)] --> MCU
+        eMMC[eMMC / SD Card (logs, firmware)] --> MCU
+    end
+
+    %% ==================== OUTPUT ====================
+    subgraph OUTPUT [Output Subsystem]
+        direction TB
+        LED_Driver --> LED_Ind[LED Indicators]
+        VideoOut[Video Output (T‑Video)] --> MCU
+        Waterfall[Waterfall Display] --> MCU
+    end
+
+    %% ==================== COMMUNICATION ====================
+    subgraph COMM [Communication Interfaces]
+        direction TB
+        UART_IF[UART Interface] --> MCU
+        USB_IF[USB Interface] --> MCU
+    end
+
+    %% ==================== CONNECTIONS ====================
+    %% Input →

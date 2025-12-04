@@ -1,0 +1,100 @@
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#BF5700'
+    primaryTextColor: '#111111'
+    primaryBorderColor: '#111111'
+    lineColor: '#333F48'
+    secondaryColor: '#F8971F'
+    tertiaryColor: '#111111'
+    fontSize: '16'
+    fontWeight: '600'
+---
+
+flowchart TD
+    %% ==================== INPUT ====================
+    subgraph INPUT [Input Subsystem]
+        direction TB
+        Sensors[Sensors] -->|Camera, Light, SDC| MCU
+        Antennas[Antennas] -->|RX 5GHz| RF_RX
+        Antennas -->|TX 5GHz| RF_TX
+        UI[Button Board] --> MCU
+        SPI[SPI Ring Buffer] --> MCU
+    end
+
+    %% ==================== RF FRONT END ====================
+    subgraph RF_FRONT [RF Front‑End & Monitoring]
+        direction TB
+        RF_RX[Receiver RX] -->|conditioned RF| MCU
+        RF_TX[Transmitter TX] -->|encoded data| Antennas
+        VSWR[VSWR Monitor] --> MCU
+    end
+
+    %% ==================== PROCESSING ====================
+    subgraph PROCESSING [Processing Subsystem]
+        direction TB
+        MCU[STM32F407 MCU] --> FreeRTOS
+        MCU --> Bootloader
+        MCU --> MainApp
+        FreeRTOS[FreeRTOS Scheduler]
+        Bootloader[Bootloader FW update]
+        MainApp[Main Application]
+        MainApp --> Drivers[Hardware Drivers]
+        Drivers --> UART[UART driver]
+        Drivers --> USB[USB driver]
+        Drivers --> LED[LED driver]
+        Drivers --> Timers[Timer / Clock Mgmt]
+        Drivers --> Common[Common modules]
+    end
+
+    %% ==================== MEMORY ====================
+    subgraph MEMORY [Memory & Storage]
+        direction TB
+        EEPROM[EEPROM settings] --> MCU
+        eMMC[eMMC / SD Card logs, firmware] --> MCU
+    end
+
+    %% ==================== OUTPUT ====================
+    subgraph OUTPUT [Output Subsystem]
+        direction TB
+        LEDDriver[LED Driver] --> LED_Output[LED Indicators]
+        Video[Video Output T‑Video] --> MCU
+        Waterfall[Waterfall Display] --> MCU
+        LED_Output --> MCU
+    end
+
+    %% ==================== COMMUNICATION ====================
+    subgraph COMM [Communication Interfaces]
+        direction TB
+        UART --> MCU
+        USB --> MCU
+    end
+
+    %% ==================== CONNECTIONS ====================
+    %% Input to processing
+    Sensors --> MCU
+    UI --> MCU
+    SPI --> MCU
+
+    %% RF flow
+    RF_RX --> MCU
+    RF_TX --> Antennas
+    VSWR --> MCU
+
+    %% Processing to memory
+    MCU --> EEPROM
+    MCU --> eMMC
+
+    %% Processing to output
+    MCU --> LEDDriver
+    MCU --> Video
+    MCU --> Waterfall
+
+    %% Processing to comm interfaces
+    MCU --> UART
+    MCU --> USB
+
+    %% Styling optional
+    classDef block fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    class INPUT,RF_FRONT,PROCESSING,MEMORY,OUTPUT,COMM block;

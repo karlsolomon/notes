@@ -1,54 +1,75 @@
 % --------------------------------------------------------------
-%  BEAMER TEMPLATE – PowerPoint‑style presentation
+%  BEAMER TEMPLATE – 30min technical presentation
 % --------------------------------------------------------------
-%  To compile:
-%      pdflatex presentation.tex
-%  You may need to run it twice for the table of contents / references.
-% --------------------------------------------------------------
-
-\documentclass[10pt]{beamer}
+\documentclass[12pt]{beamer}
 
 % --------------------------------------------------------------
 %  Theme & colour scheme
 % --------------------------------------------------------------
-% Choose any built‑in theme you like: Warsaw, Madrid, Berlin, ...
-%   – The theme defines the overall layout.
-%   – The colour theme defines the palette.
-% Feel free to replace both with your favourite.
-\usetheme{Madrid}          % <-- try Warsaw, Berlin, Copenhagen, etc.
-\usecolortheme{dolphin}    % <-- try beaver, crane, seahorse, etc.
+\usetheme{Madrid}          % you may switch to Warsaw, Berlin, …
+\usecolortheme{dolphin}    % or beaver, crane, …
 
 % --------------------------------------------------------------
 %  Packages
 % --------------------------------------------------------------
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{graphicx}      % for including figures
-\usepackage{booktabs}      % nicer tables
-\usepackage{hyperref}      % clickable links in PDF
-\usepackage{amsmath,amssymb} % math symbols
+\usepackage{fontspec}
+\usepackage{graphicx}      % figures
+\usepackage{booktabs}      % tables
+\usepackage{hyperref}      % links
+\usepackage{amsmath,amssymb}
+\usepackage{listings}      % code listings
+\usepackage{caption}
+
+% --------------------------------------------------------------
+%  Colors
+% --------------------------------------------------------------
+\definecolor{burntOrange}{HTML}{BF5700}
+\definecolor{myGray}{HTML}{EEEEEE}
+\definecolor{myBlack}{HTML}{111111}
+\setbeamercolor{structure}{fg=burntOrange, bg=myBlack}
+\setbeamercolor{title}{fg=myBlack, bg=burntOrange}
+\setbeamercolor{frametitle}{bg=burntOrange,fg=myBlack }
+\setbeamercolor{block title}{bg=burntOrange, fg=myBlack}
+\setbeamercolor{block body}{bg=myGray, fg=myBlack}
+\setbeamercolor{background canvas}{bg=myBlack!90}
+\setbeamercolor{normal text}{fg=myGray}
+\setbeamercolor{section in toc}{fg=myGray, bg=myBlack}
+
+\author[Karl Solomon]{\large Karl Solomon}
+
+% --------------------------------------------------------------
+%  BEGIN DOCUMENT
+% --------------------------------------------------------------
+\begin{document}
 
 % --------------------------------------------------------------
 %  Title / author / date
 % --------------------------------------------------------------
-\title[Short Title]{\Huge Your Full Presentation Title}
-\subtitle{Optional subtitle}
-\author[Your Name]{\large Your Name\\[2mm]
-\small\texttt{your.email@domain.com}}
-\institute[Your Institute]{Your Institute or Company}
-\date{\today} % or a fixed date: 2 December 2025
+\title[SYNK 4K: Wireless Video Platform]{\Huge SYNK 4K:\\Wireless Video}
+\subtitle{Technical Overview}
+\institute[Stryker Endoscopy]{\href{mailto:karl.solomon20@gmail.com}{karl.solomon20@gmail.com}}
+\date{\today}
+
 
 % --------------------------------------------------------------
-%  Logo (optional)
+%  Font
 % --------------------------------------------------------------
-% Uncomment the next two lines and replace the file name with your logo.
-% \logo{\includegraphics[height=1cm]{logo.png}}
+\setmainfont{JetBrainsMono Nerd Font}[Contextuals=Alternate, Ligatures = TeX]
+\setmonofont{JetBrainsMono Nerd Font}[Contextuals=Alternate, Ligatures = TeX]
 
 % --------------------------------------------------------------
-%  Begin document
+%  Background
 % --------------------------------------------------------------
-\begin{document}
+\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{
+%     \color{myGray!5}\rule{\paperwidth}{\paperheight}
+% }
+
+% --------------------------------------------------------------
+%  Bullets
+% --------------------------------------------------------------
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[square]
 
 % --------------------------------------------------------------
 %  Title page
@@ -64,121 +85,210 @@
     \tableofcontents
 \end{frame}
 
-% --------------------------------------------------------------
-%  SECTION 1
-% --------------------------------------------------------------
-\section{Introduction}
+% ==============================================================
+%  SECTION 0 – About Me
+% ==============================================================
 
-\begin{frame}{Motivation}
-    \begin{itemize}
-        \item Why this topic matters
-        \item Key challenges / open questions
-        \item Brief overview of your contribution
-    \end{itemize}
-\end{frame}
+\section{About Me}
 
-\begin{frame}{Problem Statement}
-    \begin{block}{Goal}
-        Clearly state the problem you are addressing.
-    \end{block}
-    \pause
-    \begin{alertblock}{Assumptions}
-        List any simplifying assumptions.
-    \end{alertblock}
-\end{frame}
-
-% --------------------------------------------------------------
-%  SECTION 2 – Methodology / Theory
-% --------------------------------------------------------------
-\section{Methodology}
-
-\begin{frame}{Method Overview}
-    \begin{enumerate}
-        \item Step 1 – description
-        \item Step 2 – description
-        \item Step 3 – description
-    \end{enumerate}
-\end{frame}
-
-\begin{frame}{Mathematical Model}
-    \[
-        \underbrace{y = f(x;\theta)}_{\text{model}} + \underbrace{\varepsilon}_{\text{noise}}
-    \]
-    \begin{itemize}
-        \item $x$: input vector
-        \item $\theta$: parameters to be estimated
-        \item $\varepsilon$: zero‑mean Gaussian noise
-    \end{itemize}
-\end{frame}
-
-% --------------------------------------------------------------
-%  SECTION 3 – Results
-% --------------------------------------------------------------
-\section{Results}
-
-\begin{frame}{Experimental Setup}
-    \begin{itemize}
-        \item Dataset: \texttt{XYZ}
-        \item Hardware: 2×Inteli7, 16GB RAM
-        \item Evaluation metrics: Accuracy, F1‑score, etc.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Quantitative Results}
-    \begin{table}[h!]
+\begin{frame}{About Me - Interests}
+    \begin{figure}[ht]
         \centering
-        \begin{tabular}{lccc}
-            \toprule
-            Method & Accuracy (\%) & Precision & Recall \\
-            \midrule
-            Baseline   & 78.5 & 0.81 & 0.79 \\
-            Proposed   & \textbf{85.2} & \textbf{0.87} & \textbf{0.84} \\
-            \bottomrule
-        \end{tabular}
-        \caption{Performance comparison on the test set}
-    \end{table}
+        \includegraphics[width=0.3\textwidth]{~/science/resources/espresso.png}
+        \includegraphics[width=0.25\textwidth]{~/science/resources/radar.png}
+        \includegraphics[width=0.2\textwidth]{~/science/resources/bbq.jpg}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/surface.jpeg}
+        \includegraphics[width=0.30\textwidth]{~/science/resources/soccer.jpg}
+    \end{figure}
 \end{frame}
 
-\begin{frame}{Qualitative Results}
-    \centering
-    %\includegraphics[width=0.85\linewidth]{example-figure.png}
-    \captionof{figure}{Sample output of the proposed method (replace with your own figure).}
+\begin{frame}{About Me - Projects}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.25\textwidth]{~/science/resources/DeepBrain.jpg}
+        \includegraphics[width=0.35\textwidth]{~/science/resources/1688.png}
+        \includegraphics[width=0.3\textwidth]{~/science/resources/synk4k.png}
+        \includegraphics[width=0.3\textwidth]{~/science/resources/4090.png}
+        \includegraphics[width=0.15\textwidth]{~/science/resources/orin.png}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/hopper1.jpg}
+    \end{figure}
 \end{frame}
 
-% --------------------------------------------------------------
-%  SECTION 4 – Discussion / Conclusions
-% --------------------------------------------------------------
-\section{Discussion \& Conclusions}
 
-\begin{frame}{Key Take‑aways}
+% ==============================================================
+%  SECTION 1 – Overview 
+% ==============================================================
+
+\section{Overview}
+
+\begin{frame}{SYNK 4K – Overview}
     \begin{itemize}
-        \item Summarise the main contribution in one sentence.
-        \item Highlight the most impressive quantitative gain.
-        \item Mention any surprising qualitative observations.
+        \item Surgical application
+        \item Ultra low latency 4K60 video
+        \item Incredibly stable \& high QoS link
+        \item Coexist in 5GHz (incl. DFS in TDWR)
+        \item Multicast
+    \end{itemize}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{./resources/synk4k.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{SYNK 4K – Overview}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.8\textwidth]{~/science/resources/stack.png}
+        \caption{Software Stack}
+    \end{figure}
+\end{frame}
+
+% ==============================================================
+%  SECTION – Project Lifecycle
+% ==============================================================
+\section{Project Lifecycle}
+\begin{frame}{SYNK 4K - Product Lifecycle}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.4\textwidth]{~/science/resources/components.jpg}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/p2.png}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/prototype.jpg}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/p3.jpg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{SYNK 4K - Test Lifecycle}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.3\textwidth]{~/science/resources/stressTest.jpg}
+        \includegraphics[width=0.3\textwidth]{~/science/resources/testFixture.jpg}
+        \includegraphics[width=0.3\textwidth]{~/science/resources/hospital.jpg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Team}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.4\textwidth]{~/science/resources/party.jpg}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/sykTeam.jpg}
+        \includegraphics[width=0.4\textwidth]{~/science/resources/vendorTeam.jpg}
+    \end{figure}
+\end{frame}
+
+
+% ==============================================================
+%  SECTION – My Role & Architectural Leadership
+% ==============================================================
+
+\section{My Role}
+
+\begin{frame}{My Role - Lead Software Engineer}
+    \begin{itemize}
+        \item Discovery \& vendor selection
+        \item Component selection
+        \item Board bringup
+        \item Owner \& majority contributor of Arm Cortex-M software stack.
+        \item Primary POC between R\&D teams.
+        \item Authored all 62304 documents
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Future Work}
+\begin{frame}{My Role - A Typical Day}
+    \begin{itemize}
+        \item \textbf{Morning:} 50\% meetings, 50\% push through PRs
+        \item \textbf{Afternoon:} Verify bugs resolved, help team move forward
+        \item \textbf{Evening:} Code \& open PR
+    \end{itemize}
+\end{frame}
+
+% ==============================================================
+%  SECTION 4 – Metrics & Impact
+% ==============================================================
+
+\section{Metrics \& Recognition}
+   \begin{frame}{Metrics \& Recognition}
+       \begin{itemize}
+           \item 150+ Pull requests merged
+           \item 100+ JIRA bugs resolved
+           \item 99+\% unit test code coverage
+           \item 3 Customer complaints filed in 3 years
+           \item 2x Employee of the month: Project
+           \item "One Team": Division
+           \item "Best Performance in a Leading Role": Division
+       \end{itemize}
+    \end{frame}
+
+% ==============================================================
+%  SECTION 
+% ==============================================================
+\section{Example Issue}
+
+\begin{frame}{Flicker: Setup}
+    \begin{itemize}
+        \item Performing HDMI tuning requires renting lab space and takes 15-60 minutes per run.
+        \item Takes 20-60 minutes per channel pending test settings
+        \item 8K combinations
+        \item Factory-defaults don't always work
+        \item Other products' settings don't always work
+        \item Seems to be very device \& setup specific
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Flicker: Bayesian Approach}
     \begin{enumerate}
-        \item Extend to larger datasets / real‑world deployment.
-        \item Investigate alternative model architectures.
-        \item Explore theoretical guarantees.
+        \item Assume normal distribution about "optimal" parameter for all parameters
+        \item Initial conditions: wide distribution about current settings
+        \item Randomly sample each parameter relative to the current distribution
+        \item Score is how "wide/open" is the eye
+        \item Establish new distribution, toward progress, away from regression
+        \item Repeat
     \end{enumerate}
 \end{frame}
 
-% --------------------------------------------------------------
-%  THANK‑YOU / QUESTIONS
-% --------------------------------------------------------------
+\begin{frame}{Flicker: Crowd Source Approach}
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{~/science/resources/hdmiRedriver.jpg}
+    \newline
+    Rx\&Tx Eq, Gain, Output Swing, PreEmphasis, DeEmphasis, Tx Slew
+\end{figure}
+\end{frame}
+
+% ==============================================================
+%  SECTION 7 – Conclusion & Q&A
+% ==============================================================
+
+\section{Conclusion \& Q\&A}
+
+\begin{frame}{Summary}
+    \begin{itemize}
+        \item All setups
+        \item All devices
+        \item All temperature conditions
+        \item Resolved numerous undefined/open "flicker" bugs
+        \item Key win that brought product from "good prototype" to "reliable for surgery"
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Thank you!}
     \centering
     \large Questions?
     \vspace{1cm}
-    
-    \begin{itemize}
-        \item \texttt{your.email@domain.com}
-        \item \url{https://github.com/your‑repo}
-    \end{itemize}
 \end{frame}
+
+\begin{frame}{Appendix: Two Generals}
+    \begin{itemize}
+\item \textbf{Situation}: Noisy environment causes QoS drop or DOS
+\item \textbf{TX}: Scans environment, transmits video, receives QoS reports
+\item \textbf{RX}: Scans environment, receives video, transmits QoS reports
+\item \textbf{Problem1}: How to know when to jump channels \& to which channel
+\item \textbf{Problem2}: QoS is bad, TX doesn't receive QoS packet
+\item \textbf{Problem3}: RX turned off or interference is prohibitively high
+\item \textbf{Problem4}: Reduce hops
+\end{itemize}
+\end{frame}
+
+
 
 % --------------------------------------------------------------
 %  END OF DOCUMENT

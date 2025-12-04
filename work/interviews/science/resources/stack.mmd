@@ -1,0 +1,40 @@
+---
+config:
+  theme: 'base'
+  themeVariables:
+    color: '#111111'
+    primaryColor: '#BF5700'
+    secondaryColor: '#BF5700'
+    tertiaryColor: '#111111'
+    nodeTextColor: '#111111'
+---
+block
+  columns 6
+  classDef Label fill:#fff,stroke:none,font-weight:bold,align:left
+  Application["Application"]
+  block:mod:6
+    columns 3
+    Manager Dispatcher Scheduler
+  end
+  Modules["Modules"]
+  block:modules:6
+    columns 3
+    Configs Logs Region Coexistence TUI FFU
+  end
+  Peripherals["Peripherals"]
+  block:chips:6
+    columns 3
+    Flash Eeprom Temp LED HDMI Qualcomm HDMI
+  end
+  Drivers["Drivers"]
+  block:comms:6
+    %% columns 3
+    %% columns auto (default)
+    UART I2C SPI USB GPIO IWDG TIM
+  end
+  Firmware["Firmware"]
+  block:base:6
+    columns 1
+    Bootloader
+  class Application,Modules,Peripherals,Drivers,Firmware Label
+end
